@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:second_project/cart.dart';
 import 'package:second_project/cart_purchase.dart';
+import 'package:second_project/detailscart.dart';
 import 'package:second_project/main.dart';
 import 'package:second_project/mainpage.dart';
 import 'package:second_project/orderdetails.dart';
@@ -559,7 +560,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                CartPurchagepage(widget.mobileDetails)));
+                                DetailscartPage(widget.mobileDetails)));
                   });
                 },
                 child: Container(

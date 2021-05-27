@@ -251,24 +251,28 @@ class _LoginpageState extends State<Loginpage> {
                           isPassBlank = true;
                           isPhoneInvalid = false;
                         } else {
-                          for (int i = 0; i < userList.length; i++) {
-                            if (phoneController.text == userList[i]["phone"] &&
-                                passController.text ==
-                                    userList[i]["password"]) {
-                              isPassBlank = false;
-                              isPhoneInvalid = false;
-                              passwordMsg = "Password field is blank!";
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Mainpage()));
+                          // for (int i = 0; i < userList.length; i++) {
+                          //   if (phoneController.text == userList[i]["phone"] &&
+                          //       passController.text ==
+                          //           userList[i]["password"]) {
+                          //     isPassBlank = false;
+                          //     isPhoneInvalid = false;
+                          //     passwordMsg = "Password field is blank!";
 
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Mainpage()));
-                            } else {
-                              isPassBlank = true;
-                              isPhoneInvalid = false;
-                              passwordMsg = "User not found!";
-                            }
-                          }
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => Mainpage()));
+                          //   } else {
+                          //     isPassBlank = true;
+                          //     isPhoneInvalid = false;
+                          //     passwordMsg = "User not found!";
+                          //   }
+                          // }
                         }
 
                         print("isEmailBlank");

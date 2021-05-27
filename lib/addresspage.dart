@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:second_project/cart.dart';
 import 'package:second_project/editaddresspage.dart';
@@ -606,12 +605,14 @@ class _AddresspageState extends State<Addresspage> {
                                       maxLines: 2,
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 30,
-                                  ),
+                                  // SizedBox(
+                                  //   height: 30,
+                                  // ),
                                   Row(
+                                  
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
+                                    
                                       GestureDetector(
                                         onTap: () {
                                           Navigator.push(
@@ -621,10 +622,12 @@ class _AddresspageState extends State<Addresspage> {
                                                       Editaddresspage()));
                                         },
                                         child: Container(
+                                          margin: EdgeInsets.only(bottom: 20),
                                           child: Icon(
                                             Icons.edit,
                                             size: 25,
                                             color: Colors.blue,
+
                                           ),
                                         ),
                                       ),
@@ -638,6 +641,7 @@ class _AddresspageState extends State<Addresspage> {
                                           });
                                         },
                                         child: Container(
+                                           margin: EdgeInsets.only(bottom: 20,right: 10),
                                           child: Icon(
                                             Icons.delete,
                                             color: Colors.blue,

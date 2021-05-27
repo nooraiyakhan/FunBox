@@ -1,25 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:second_project/addresspage.dart';
-import 'package:second_project/main.dart';
-import 'package:second_project/order.dart';
-import 'package:second_project/detailsPage.dart';
-
-import 'package:second_project/mainpage.dart';
-import 'package:second_project/orderdetails.dart';
-import 'main.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class CartPurchagepage extends StatefulWidget {
+import 'addresspage.dart';
+import 'order.dart';
+class DetailscartPage extends StatefulWidget {
   final mobileDetails;
-  CartPurchagepage(this.mobileDetails);
+  DetailscartPage(this.mobileDetails);
   @override
-  _CartPurchagepageState createState() => _CartPurchagepageState();
+  _DetailscartPageState createState() => _DetailscartPageState();
 }
 
-class _CartPurchagepageState extends State<CartPurchagepage> {
+class _DetailscartPageState extends State<DetailscartPage> {
+  
+
   TextEditingController voucherController = new TextEditingController();
   TextEditingController textfieldController = new TextEditingController();
   TextEditingController addressController = new TextEditingController();
@@ -81,7 +76,7 @@ class _CartPurchagepageState extends State<CartPurchagepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.blue),
           backgroundColor: Colors.white,
           title: Text(
@@ -122,24 +117,8 @@ class _CartPurchagepageState extends State<CartPurchagepage> {
                   SizedBox(
                     height: 22,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        child: Text(
-                          "Total Product",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
-                        ),
-                      ),
-                      Container(
-                          child: Text("1",
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 15))),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 22,
-                  ),
+                 
+                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -352,7 +331,7 @@ class _CartPurchagepageState extends State<CartPurchagepage> {
                             Container(
                                 margin: EdgeInsets.only(left: 15),
                                 child: Text(
-                                  address,
+                                  "address",
                                   style: TextStyle(color: Colors.grey),
                                 )),
                           ],
@@ -654,7 +633,6 @@ class _CartPurchagepageState extends State<CartPurchagepage> {
             ),
           ),
         ),
-        );
-    
+    );
   }
 }

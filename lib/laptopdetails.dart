@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:second_project/cart_purchase.dart';
 import 'package:second_project/detailsPage.dart';
+import 'package:second_project/laptopdetailscart.dart';
 import 'package:second_project/laptopdrelatedpage.dart';
 import 'package:second_project/main.dart';
 import 'package:second_project/purchagepage.dart';
@@ -544,7 +545,7 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
             GestureDetector(
               onTap: () {
                 Navigator.push(context, 
-                MaterialPageRoute(builder: (context)=>CartPurchagepage(widget.laptopDetails)
+                MaterialPageRoute(builder: (context)=>Laptopdetailscart(widget.laptopDetails)
                 ));
               },
               child: Container(

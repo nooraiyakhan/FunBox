@@ -11,7 +11,6 @@ import 'package:second_project/order.dart';
 import 'package:second_project/terms.dart';
 import 'package:second_project/voucherpage.dart';
 import 'package:http/http.dart' as http;
-
 import 'main.dart';
 class ProfilePage extends StatefulWidget {
   @override
@@ -167,9 +166,9 @@ class _ProfilePageState extends State<ProfilePage> {
                           )),
                     ),
               
-                  SizedBox(
-                    height: 30,
-                  ),
+                  // SizedBox(
+                  //   height: 30,
+                  // ),
                   GestureDetector(
                     onTap: () {
                       Navigator.pop(context);

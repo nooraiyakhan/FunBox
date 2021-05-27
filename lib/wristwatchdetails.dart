@@ -5,6 +5,7 @@ import 'package:second_project/cart_purchase.dart';
 import 'package:second_project/purchagepage.dart';
 import 'package:second_project/seconddetaispage.dart';
 import 'package:second_project/secondwatchdetailspage.dart';
+import 'package:second_project/watchdetailscart.dart';
 import 'package:second_project/wristwatch.dart';
 import 'package:share/share.dart';
 import 'package:flutter/rendering.dart';
@@ -471,7 +472,7 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              CartPurchagepage(widget.wristwatchDetails)));
+                              Watchdetailscart(widget.wristwatchDetails)));
                 },
                 child: Container(
                   decoration: BoxDecoration(
