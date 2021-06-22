@@ -9,6 +9,7 @@ class Forgotpass extends StatefulWidget {
 
 class _ForgotpassState extends State<Forgotpass> {
   bool isEmailBlank=false;
+  bool isEmailInvalid=false;
   var child;
   TextEditingController emailcontroller = new TextEditingController();
   @override
@@ -42,14 +43,14 @@ class _ForgotpassState extends State<Forgotpass> {
                 margin: EdgeInsets.only(left: 20, top: 100),
                 child: Text(
                   "Forgot your password?",
-                  style: TextStyle(fontSize: 23),
+                  style: TextStyle(fontSize: 23,fontWeight: FontWeight.w300),
                 ),
               ),
               Container(
                 margin: EdgeInsets.only(left: 20, top: 10),
                 child: Text(
                   "No worries! Enter your Email we will sent you a new reset ",
-                  style: TextStyle(fontSize: 12),
+                  style: TextStyle(fontSize: 12,fontWeight: FontWeight.w300),
                 ),
               ),
           Container(
@@ -66,9 +67,9 @@ class _ForgotpassState extends State<Forgotpass> {
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Type your Email...",
-                      hintStyle: TextStyle(color: Colors.grey,fontSize: 15),
+                      hintStyle: TextStyle(color: Colors.grey[700],fontSize: 15,fontWeight: FontWeight.w300),
                       labelText: "Enter Email Or Phone Number",
-                      labelStyle: TextStyle(color: Colors.blue)
+                      labelStyle: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300)
                       
                       ),
                 ),
@@ -81,7 +82,7 @@ class _ForgotpassState extends State<Forgotpass> {
                   children: [
                     Icon(Icons.error_outline,color: Colors.redAccent,size: 17,),
                     SizedBox(width: 5,),
-                    Text("Email/Number Field Is Empty",style: TextStyle(color: Colors.redAccent),)
+                    Text("Email/Number field is empty!",style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),)
                   ],
                 ),
               )
@@ -122,7 +123,7 @@ class _ForgotpassState extends State<Forgotpass> {
                                                     "Send Verification Code",
                                                     style: TextStyle(
                                                         color: Colors.white,
-                                                        fontSize: 16),
+                                                        fontSize: 16,fontWeight: FontWeight.w300),
                                                   ),
                                                 ),
                                               
@@ -132,7 +133,19 @@ class _ForgotpassState extends State<Forgotpass> {
  
                 ),
                     ),
-         
+                    isEmailInvalid
+                    ?Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.error_outline,color: Colors.redAccent,size: 17,),
+                    SizedBox(width: 5,),
+                    Text("Email/number is invalid",style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),)
+                  ],
+                ),
+              )
+              :Container(),
             ],
           ),
         ),

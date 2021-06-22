@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:second_project/addresspage.dart';
 import 'package:second_project/cart.dart';
+import 'package:second_project/contact.dart';
 import 'package:second_project/homepage.dart';
 import 'package:second_project/loginpage.dart';
 import 'package:second_project/mainpage.dart';
@@ -55,9 +56,9 @@ class _VoucherpageState extends State<Voucherpage> {
           title: Text(
             "Vouchers",
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[700],
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w300),
           ),
         ),
         drawer: Drawer(
@@ -92,14 +93,14 @@ class _VoucherpageState extends State<Voucherpage> {
                                     child: Text(
                                       "Hello,",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 15),
+                                          color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                                     ),
                                   ),
                                   Container(
                                     child: Text(
                                       "Nooraiya khan",
                                       style: TextStyle(
-                                          fontSize: 18, color: Colors.black),
+                                          fontSize: 18, color: Colors.black,fontWeight: FontWeight.w300),
                                     ),
                                   ),
                                 ],
@@ -136,7 +137,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                 Text(
                                   "Home",
                                   style: TextStyle(
-                                      color: Colors.grey, fontSize: 14),
+                                      color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                 ),
                               ],
                             ),
@@ -168,7 +169,7 @@ class _VoucherpageState extends State<Voucherpage> {
                               Text(
                                 "Profile",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -204,7 +205,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                     Text(
                                       "Cart",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -212,7 +213,7 @@ class _VoucherpageState extends State<Voucherpage> {
                               Text(
                                 "4",
                                 style: TextStyle(
-                                    color: Colors.blueAccent, fontSize: 14),
+                                    color: Colors.blueAccent, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -247,7 +248,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                     Text(
                                       "Orders",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -255,7 +256,7 @@ class _VoucherpageState extends State<Voucherpage> {
                               Text(
                                 "4",
                                 style: TextStyle(
-                                    color: Colors.blueAccent, fontSize: 14),
+                                    color: Colors.blueAccent, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -285,7 +286,7 @@ class _VoucherpageState extends State<Voucherpage> {
                               Text(
                                 "Address",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -322,7 +323,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                     Text(
                                       "Vouchers",
                                       style: TextStyle(
-                                          color: Colors.blue, fontSize: 14),
+                                          color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -330,7 +331,7 @@ class _VoucherpageState extends State<Voucherpage> {
                               Text(
                                 "4",
                                 style:
-                                    TextStyle(color: Colors.blue, fontSize: 14),
+                                    TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -366,7 +367,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                     Text(
                                       "Favourite",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -374,19 +375,19 @@ class _VoucherpageState extends State<Voucherpage> {
                               Text(
                                 "2",
                                 style:
-                                    TextStyle(color: Colors.blue, fontSize: 14),
+                                    TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 20,
                     ),
                     Divider(
                       height: 2,
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 20,
                     ),
                     GestureDetector(
                       onTap: () {
@@ -410,16 +411,42 @@ class _VoucherpageState extends State<Voucherpage> {
                               Text(
                                 "Terms and Conditions",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               ),
                             ],
                           )),
                     ),
-
-                    SizedBox(
+                         SizedBox(
                       height: 30,
                     ),
                     InkWell(
+                      onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact()));
+                      },
+                      child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.phone,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Contact Us",
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          )),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    GestureDetector(
                       onTap: () {
                         showDialog(
                             context: context,
@@ -430,7 +457,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                     Container(
                                       child: Text(
                                         "Do you want to Log Out?",
-                                        style: TextStyle(
+                                        style: TextStyle(fontWeight: FontWeight.w300,
                                             color: Colors.grey, fontSize: 15),
                                       ),
                                     ),
@@ -463,6 +490,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                               child: Text(
                                                 "Yes",
                                                 style: TextStyle(
+                                                  fontWeight: FontWeight.w300,
                                                     color: Colors.white,
                                                     fontSize: 15),
                                               ),
@@ -488,6 +516,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                               child: Text(
                                                 "No",
                                                 style: TextStyle(
+                                                  fontWeight: FontWeight.w300,
                                                     color: Colors.white,
                                                     fontSize: 15),
                                               ),
@@ -514,7 +543,7 @@ class _VoucherpageState extends State<Voucherpage> {
                               Text(
                                 "Logout",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               ),
                             ],
                           )),
@@ -552,7 +581,7 @@ class _VoucherpageState extends State<Voucherpage> {
                         Container(
                           child: Text(
                             "${voucherList[index]["name"]}",
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(fontSize: 16,fontWeight: FontWeight.w300),
                           ),
                         ),
                         SizedBox(
@@ -561,7 +590,7 @@ class _VoucherpageState extends State<Voucherpage> {
                         Container(
                           child: Text(
                             "Voucher number:${voucherList[index]['number']}",
-                            style: TextStyle(fontSize: 16, color: Colors.grey),
+                            style: TextStyle(fontSize: 16, color: Colors.grey,fontWeight: FontWeight.w300),
                           ),
                         ),
                         SizedBox(
@@ -611,7 +640,7 @@ class _VoucherpageState extends State<Voucherpage> {
                                 "Valid:${voucherList[index]['valid']}",
                                 style: TextStyle(
                                   color: Colors.grey[700],
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.w300,
                                   fontSize: 12,
                                 ),
                               ),

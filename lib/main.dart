@@ -29,7 +29,7 @@ List userAddressList = [];
 List userFavouriteList = [];
 List userList = [];
 
-String ip = "http://192.168.0.105";
+String ip = "http://192.168.0.106";
 
 String ipAddress = ip + "/Funbox/mobilelistdetails.php";
 String ipAddress1 = ip + "/Funbox/laptopdetails.php";
@@ -40,6 +40,7 @@ String ipAddress5 = ip + "/Funbox/favouritepage.php";
 String ipAddress6 = ip + "/Funbox/orderdetails.php";
 String ipAddress7 = ip + "/Funbox/profilepage.php";
 String ipAddress8 = ip + "/Funbox/vouchers.php";
+String registerEndPoint = ip + "/Funbox/register_user.php";
 
 class MyApp extends StatelessWidget {
   @override

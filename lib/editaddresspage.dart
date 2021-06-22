@@ -35,7 +35,7 @@ class _EditaddresspageState extends State<Editaddresspage> {
           title: Text(
             "My Address",
             style: TextStyle(
-                color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w400),
+                color: Colors.grey[700], fontSize: 16, fontWeight: FontWeight.w300),
           ),
           // actions: [
           //   IconButton(
@@ -86,12 +86,14 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                               decoration: InputDecoration(
                                                   hintText: "Type title",
                                                   hintStyle: TextStyle(
-                                                    color: Colors.grey,
+                                                    color: Colors.grey[700],
                                                     fontSize: 15,
+                                                     fontWeight: FontWeight.w300
                                                   ),
                                                   labelText: "Enter title",
                                                   labelStyle: TextStyle(
                                                     color: Colors.blue,
+                                                    fontWeight: FontWeight.w300
                                                   ),
                                                   border: InputBorder.none),
                                             ),
@@ -117,7 +119,7 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                                 Text(
                                                   "Title is empty",
                                                   style: TextStyle(
-                                                      color: Colors.redAccent),
+                                                      color: Colors.redAccent,fontWeight: FontWeight.w300),
                                                 )
                                               ],
                                             ),
@@ -142,13 +144,15 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                         decoration: InputDecoration(
                                             hintText: "Type house plot nmuber",
                                             hintStyle: TextStyle(
-                                              color: Colors.grey,
+                                              color: Colors.grey[700],
                                               fontSize: 15,
+                                              fontWeight: FontWeight.w300
                                             ),
                                             labelText:
                                                 "Enter house/plot number(optional)",
                                             labelStyle: TextStyle(
                                               color: Colors.blue,
+                                              fontWeight: FontWeight.w300
                                             ),
                                             border: InputBorder.none),
                                       ),
@@ -171,7 +175,9 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                                 Text(
                                                   "House is empty",
                                                   style: TextStyle(
-                                                      color: Colors.redAccent),
+                                                      color: Colors.redAccent,
+                                                      fontWeight: FontWeight.w300
+                                                      ),
                                                 )
                                               ],
                                             ),
@@ -199,12 +205,14 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                           decoration: InputDecoration(
                                               hintText: "Type street/road",
                                               hintStyle: TextStyle(
-                                                color: Colors.grey,
+                                                color: Colors.grey[700],
+                                                fontWeight: FontWeight.w300,
                                                 fontSize: 15,
                                               ),
                                               labelText: "Enter street/road",
                                               labelStyle: TextStyle(
                                                 color: Colors.blue,
+                                                fontWeight: FontWeight.w300
                                               ),
                                               border: InputBorder.none),
                                         )),
@@ -226,7 +234,8 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                                 Text(
                                                   "Street is empty",
                                                   style: TextStyle(
-                                                      color: Colors.redAccent),
+                                                      color: Colors.redAccent,
+                                                      fontWeight: FontWeight.w300),
                                                 )
                                               ],
                                             ),
@@ -254,13 +263,15 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                           decoration: InputDecoration(
                                               hintText: "Type area",
                                               hintStyle: TextStyle(
-                                                color: Colors.grey,
+                                                color: Colors.grey[700],
                                                 fontSize: 15,
+                                                fontWeight: FontWeight.w300
                                               ),
                                               labelText:
                                                   "Enter area(ex:Taltola)",
                                               labelStyle: TextStyle(
                                                 color: Colors.blue,
+                                                fontWeight: FontWeight.w300
                                               ),
                                               border: InputBorder.none),
                                         )),
@@ -282,6 +293,7 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                                 Text(
                                                   "Area is empty",
                                                   style: TextStyle(
+                                                    fontWeight: FontWeight.w300,
                                                       color: Colors.redAccent),
                                                 )
                                               ],
@@ -310,13 +322,15 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                           decoration: InputDecoration(
                                               hintText: "Type block/sector",
                                               hintStyle: TextStyle(
-                                                color: Colors.grey,
+                                                color: Colors.grey[700],
+                                                fontWeight: FontWeight.w300,
                                                 fontSize: 15,
                                               ),
                                               labelText:
                                                   "Enter block/sector(optional)",
                                               labelStyle: TextStyle(
                                                 color: Colors.blue,
+                                                fontWeight: FontWeight.w300
                                               ),
                                               border: InputBorder.none),
                                         )),
@@ -338,7 +352,7 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                                 Text(
                                                   "Block is empty",
                                                   style: TextStyle(
-                                                      color: Colors.redAccent),
+                                                      color: Colors.redAccent,fontWeight: FontWeight.w300),
                                                 )
                                               ],
                                             ),
@@ -361,11 +375,11 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                         decoration: InputDecoration(
                                           hintText: "Type floor/flat",
                                           hintStyle: TextStyle(
-                                              color: Colors.grey, fontSize: 15),
+                                              color: Colors.grey[700], fontSize: 15,fontWeight: FontWeight.w300),
                                           labelText:
                                               "Enter floor/flat(optional)",
                                           labelStyle: TextStyle(
-                                            color: Colors.blue,
+                                            color: Colors.blue,fontWeight: FontWeight.w300
                                           ),
                                           border: InputBorder.none,
                                         ),
@@ -389,7 +403,7 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                                 Text(
                                                   "Floor is empty",
                                                   style: TextStyle(
-                                                      color: Colors.redAccent),
+                                                      color: Colors.redAccent,fontWeight: FontWeight.w300),
                                                 )
                                               ],
                                             ),
@@ -454,7 +468,7 @@ class _EditaddresspageState extends State<Editaddresspage> {
                                                   "Submit",
                                                   style: TextStyle(
                                                       color: Colors.white,
-                                                      fontSize: 16),
+                                                      fontSize: 16,fontWeight: FontWeight.w300),
                                                 ),
                                               ),
                                               Container(

@@ -5,6 +5,8 @@ import 'package:second_project/emailpage.dart';
 import 'package:second_project/loginpage.dart';
 import 'package:second_project/main.dart';
 import 'package:second_project/sendver.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class Registerpage extends StatefulWidget {
   @override
@@ -14,12 +16,13 @@ class Registerpage extends StatefulWidget {
 class _RegisterpageState extends State<Registerpage> {
   bool isNameBlank = false;
   bool isMobileNumberBlank = false;
+  bool isPhoneInvalid = false;
   bool isEmailBlank = false;
   bool isPasswordBlank = false;
   bool isConfirmPasswordBlank = false;
   bool isDeliveryAddressBlank = false;
   bool isNidNumberBlank = false;
-  String confirmOkMsg = "Confirm Password Field Is Empty!",
+  String confirmOkMsg = "Confirm password field is empty!",
       emailOkMsg = "Email field is empty!";
   var child;
   TextEditingController namecontroller = new TextEditingController();
@@ -66,8 +69,10 @@ class _RegisterpageState extends State<Registerpage> {
                       Container(
                         child: Text(
                           "Please enter your credential to sign up ",
-                          style:
-                              TextStyle(fontSize: 11, color: Colors.grey[500]),
+                          style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey[700],
+                              fontWeight: FontWeight.w300),
                         ),
                         padding: EdgeInsets.fromLTRB(20, 5, 0, 0),
                       ),
@@ -97,10 +102,13 @@ class _RegisterpageState extends State<Registerpage> {
                                         border: InputBorder.none,
                                         hintText: "Type Your Name...",
                                         hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        labelText: "Enter Your Name",
-                                        labelStyle:
-                                            TextStyle(color: Colors.blue)),
+                                            color: Colors.grey,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w300),
+                                        labelText: "Enter Your Name.",
+                                        labelStyle: TextStyle(
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.w300)),
                                   ),
                                 ),
                                 isNameBlank
@@ -118,7 +126,11 @@ class _RegisterpageState extends State<Registerpage> {
                                             SizedBox(
                                               width: 5,
                                             ),
-                                            Text("Your Name Field Is Empty")
+                                            Text(
+                                              "Your name field is empty!",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300),
+                                            )
                                           ],
                                         ),
                                       )
@@ -135,15 +147,27 @@ class _RegisterpageState extends State<Registerpage> {
                                       color: Colors.grey[100]),
                                   child: TextField(
                                     controller: mobilenumbercontroller,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        phone = value;
+                                        if (phone.length > 11) {
+                                          phone = "";
+                                          mobilenumbercontroller.text = phone;
+                                        }
+                                      });
+                                    },
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                         border: InputBorder.none,
                                         hintText: "Type Your Phone Number...",
                                         hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        labelText: "Enter Your Phone Number",
-                                        labelStyle:
-                                            TextStyle(color: Colors.blue)),
+                                            color: Colors.grey,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w300),
+                                        labelText: "Enter Your Phone Number.",
+                                        labelStyle: TextStyle(
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.w300)),
                                   ),
                                 ),
                                 isMobileNumberBlank
@@ -161,11 +185,53 @@ class _RegisterpageState extends State<Registerpage> {
                                             SizedBox(
                                               width: 5,
                                             ),
-                                            Text("Number Field Is Empty")
+                                            Text(
+                                              "Number field is empty!",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300),
+                                            )
                                           ],
                                         ),
                                       )
                                     : Container(),
+                                isPhoneInvalid
+                                    ? Container(
+                                        margin: EdgeInsets.only(top: 10),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.error_outline,
+                                              color: Colors.redAccent,
+                                              size: 17,
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            Text(
+                                              "Invalid number.",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300),
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    : Container(),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(right: 20),
+                                  alignment: Alignment.centerRight,
+                                  child: Text(
+                                    "${phone.length}/11",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                ),
                                 SizedBox(
                                   height: 10,
                                 ),
@@ -182,10 +248,13 @@ class _RegisterpageState extends State<Registerpage> {
                                         border: InputBorder.none,
                                         hintText: "Type Your E-mail...",
                                         hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        labelText: "Enter Your Email ",
-                                        labelStyle:
-                                            TextStyle(color: Colors.blue)),
+                                            color: Colors.grey,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w300),
+                                        labelText: "Enter Your Email. ",
+                                        labelStyle: TextStyle(
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.w300)),
                                   ),
                                 ),
                                 isEmailBlank
@@ -203,7 +272,11 @@ class _RegisterpageState extends State<Registerpage> {
                                             SizedBox(
                                               width: 5,
                                             ),
-                                            Text(emailOkMsg)
+                                            Text(
+                                              emailOkMsg,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300),
+                                            )
                                           ],
                                         ),
                                       )
@@ -224,10 +297,13 @@ class _RegisterpageState extends State<Registerpage> {
                                         border: InputBorder.none,
                                         hintText: "Type Your Password...",
                                         hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        labelText: "Enter Your Password",
-                                        labelStyle:
-                                            TextStyle(color: Colors.blue)),
+                                            fontWeight: FontWeight.w300,
+                                            color: Colors.grey,
+                                            fontSize: 15),
+                                        labelText: "Enter Your Password.",
+                                        labelStyle: TextStyle(
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.w300)),
                                   ),
                                 ),
                                 isPasswordBlank
@@ -245,7 +321,11 @@ class _RegisterpageState extends State<Registerpage> {
                                             SizedBox(
                                               width: 5,
                                             ),
-                                            Text("Password Field Is Empty")
+                                            Text(
+                                              "Password field is empty!",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300),
+                                            )
                                           ],
                                         ),
                                       )
@@ -266,10 +346,13 @@ class _RegisterpageState extends State<Registerpage> {
                                         border: InputBorder.none,
                                         hintText: "Type Your Password...",
                                         hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
-                                        labelText: "Confirm Password",
-                                        labelStyle:
-                                            TextStyle(color: Colors.blue)),
+                                            color: Colors.grey,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w300),
+                                        labelText: "Confirm Password.",
+                                        labelStyle: TextStyle(
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.w300)),
                                   ),
                                 ),
                                 isConfirmPasswordBlank
@@ -287,7 +370,11 @@ class _RegisterpageState extends State<Registerpage> {
                                             SizedBox(
                                               width: 5,
                                             ),
-                                            Text(confirmOkMsg)
+                                            Text(
+                                              confirmOkMsg,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300),
+                                            )
                                           ],
                                         ),
                                       )
@@ -308,10 +395,13 @@ class _RegisterpageState extends State<Registerpage> {
                                         border: InputBorder.none,
                                         hintText: "Type Your NID Number...",
                                         hintStyle: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
+                                            color: Colors.grey,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w300),
                                         labelText: "Enter NID Number",
-                                        labelStyle:
-                                            TextStyle(color: Colors.blue)),
+                                        labelStyle: TextStyle(
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.w300)),
                                   ),
                                 ),
                                 isNidNumberBlank
@@ -329,7 +419,11 @@ class _RegisterpageState extends State<Registerpage> {
                                             SizedBox(
                                               width: 5,
                                             ),
-                                            Text("NID Number Field Is Empty")
+                                            Text(
+                                              "NID number field is empty!",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w300),
+                                            )
                                           ],
                                         ),
                                       )
@@ -346,12 +440,14 @@ class _RegisterpageState extends State<Registerpage> {
                                 if (namecontroller.text == "") {
                                   isNameBlank = true;
                                   isMobileNumberBlank = false;
+                                  isPhoneInvalid = false;
                                   isEmailBlank = false;
                                   isPasswordBlank = false;
                                   isConfirmPasswordBlank = false;
 
                                   isNidNumberBlank = false;
                                 } else if (mobilenumbercontroller.text == "") {
+                                  isPhoneInvalid = true;
                                   isNameBlank = false;
                                   isMobileNumberBlank = true;
                                   isEmailBlank = false;
@@ -361,6 +457,7 @@ class _RegisterpageState extends State<Registerpage> {
                                   isNidNumberBlank = false;
                                 } else if (emailcontroller.text == "") {
                                   isNameBlank = false;
+                                  isPhoneInvalid = false;
                                   isMobileNumberBlank = false;
                                   isEmailBlank = true;
                                   isPasswordBlank = false;
@@ -372,6 +469,7 @@ class _RegisterpageState extends State<Registerpage> {
                                     !emailcontroller.text.contains(".")) {
                                   isNameBlank = false;
                                   isMobileNumberBlank = false;
+                                  isPhoneInvalid = false;
                                   isEmailBlank = true;
                                   isPasswordBlank = false;
                                   isConfirmPasswordBlank = false;
@@ -381,6 +479,7 @@ class _RegisterpageState extends State<Registerpage> {
                                 } else if (passwordcontroller.text == "") {
                                   isNameBlank = false;
                                   isMobileNumberBlank = false;
+                                  isPhoneInvalid = false;
                                   isEmailBlank = false;
                                   isPasswordBlank = true;
                                   isConfirmPasswordBlank = false;
@@ -390,6 +489,7 @@ class _RegisterpageState extends State<Registerpage> {
                                     "") {
                                   isNameBlank = false;
                                   isMobileNumberBlank = false;
+                                  isPhoneInvalid = false;
                                   isEmailBlank = false;
                                   isPasswordBlank = false;
                                   isConfirmPasswordBlank = true;
@@ -399,6 +499,7 @@ class _RegisterpageState extends State<Registerpage> {
                                     passwordcontroller.text) {
                                   isNameBlank = false;
                                   isMobileNumberBlank = false;
+                                  isPhoneInvalid = false;
                                   isEmailBlank = false;
                                   isPasswordBlank = false;
                                   isConfirmPasswordBlank = true;
@@ -414,23 +515,25 @@ class _RegisterpageState extends State<Registerpage> {
 
                                   isNidNumberBlank = true;
                                 } else {
-                                  userList.add({
+                                  var payLoad = {
                                     "name": namecontroller.text,
                                     "phone": mobilenumbercontroller.text,
                                     "email": emailcontroller.text,
                                     "password": passwordcontroller.text,
                                     "nid": nidnumbercontroller.text
-                                  });
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Sendverpage()));
+                                  };
+                                  sendUserInfo(payLoad);
+                                  userList.add(payLoad);
+                                  // Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) => Sendverpage()));
                                 }
                               });
                             },
                             child: Container(
                               margin: EdgeInsets.only(
-                                  top: 30, bottom: 20, left: 20, right: 20),
+                                  bottom: 20, left: 20, right: 20),
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
@@ -443,7 +546,9 @@ class _RegisterpageState extends State<Registerpage> {
                                       child: Text(
                                         "Next",
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 16),
+                                            fontWeight: FontWeight.w300,
+                                            color: Colors.white,
+                                            fontSize: 16),
                                       ),
                                     ),
                                     SizedBox(
@@ -457,5 +562,16 @@ class _RegisterpageState extends State<Registerpage> {
                         ],
                       ),
                     ]))));
+  }
+
+  Future sendUserInfo(payLoad) async {
+    final response = await http.post(registerEndPoint, body: payLoad);
+
+    print(response);
+
+    int statusCode = response.statusCode;
+    print(statusCode);
+    String bodyResponse = response.body;
+    print(bodyResponse);
   }
 }

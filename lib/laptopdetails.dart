@@ -69,9 +69,10 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
           title: Text(
             "Details",
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[700],
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+                
+                fontWeight: FontWeight.w300),
           ),
          
         ),
@@ -119,13 +120,13 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(2),
-                              color: Colors.grey,
+                              color: Colors.grey[700],
                             ),
                             margin: EdgeInsets.only(right: 30),
                             padding: EdgeInsets.all(5),
                             child: Text(
                               "${pageIndex + 1}/${sliderPic.length}",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300),
                             ),
                           )
                         ],
@@ -146,13 +147,10 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                 ),
                 Column(
                   children: [
-                    Container(
+                    Card(
                       margin: EdgeInsets.only(left: 30, right: 30, top: 10),
                       // margin: EdgeInsets.only(right: 210),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
+                    
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -174,7 +172,7 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                                     child: Text(
                                       "${widget.laptopDetails['price']}",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 16),
+                                          color: Colors.white, fontSize: 16,fontWeight: FontWeight.w300),
                                     ),
                                   ),
                                 )
@@ -210,12 +208,12 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                           padding: EdgeInsets.only(
                               top: 10, bottom: 10, right: 15, left: 15),
                           child: Text(
-                            "Add To Cart",
-                            style: TextStyle(color: Colors.white, fontSize: 12),
+                            "Add to Cart",
+                            style: TextStyle(color: Colors.white, fontSize: 12,fontWeight: FontWeight.w300),
                           ),
                         ),
                       ),
-                          InkWell(
+                          GestureDetector(
                             onTap: () {
                               setState(() {
                                 if (isFav) {
@@ -257,8 +255,8 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
-                    padding:
-                        EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 5),
+                   padding:
+                        EdgeInsets.only(left: 20, right: 10, bottom: 15, top: 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -267,48 +265,64 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                               right: 0, left: 0, top: 10, bottom: 8),
                           child: Text(
                             "Product Information",
-                            style: TextStyle(color: Colors.black, fontSize: 15),
+                            style: TextStyle(color: Colors.black87, fontSize: 18,fontWeight: FontWeight.w300),
                           ),
                         ),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Model:${widget.laptopDetails['name']}",
+                              "Model:${widget.laptopDetails['name']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Display:${widget.laptopDetails['display']}",
+                              "Display:${widget.laptopDetails['display']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Storage:${widget.laptopDetails['storage']}",
+                              "Storage:${widget.laptopDetails['storage']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Memory:${widget.laptopDetails['memory']}",
+                              "Memory:${widget.laptopDetails['memory']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Graphics:${widget.laptopDetails['graphics']}",
+                              "Graphics:${widget.laptopDetails['graphics']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
+                            )),
+                               Container(
+                            padding: EdgeInsets.only(
+                                right: 0, left: 0, top: 0, bottom: 8),
+                            child: Text(
+                              "Memory:${widget.laptopDetails['processor']}",maxLines: 4,
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
+                            )),
+                        Container(
+                            padding: EdgeInsets.only(
+                                right: 0, left: 0, top: 0, bottom: 8),
+                            child: Text(
+                              "Battery:${widget.laptopDetails['battery']}",maxLines: 3,
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
@@ -316,7 +330,7 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                             child: Text(
                               "Status:${widget.laptopDetails['status']}",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
@@ -324,7 +338,7 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                             child: Text(
                               "Condition:${widget.laptopDetails['condition']}",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
@@ -332,15 +346,15 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                             child: Text(
                               "Posted:${widget.laptopDetails['posted']}",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "warranty:${widget.laptopDetails['warranty']}",
+                              "Warranty:${widget.laptopDetails['warranty']}",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                       ],
                     ),
@@ -374,7 +388,7 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                         Container(
                           child: Text(
                             "Share",
-                            style: TextStyle(fontSize: 15, color: Colors.blue),
+                            style: TextStyle(fontSize: 15, color: Colors.blue,fontWeight: FontWeight.w300),
                           ),
                         )
                       ],
@@ -384,12 +398,9 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  margin: EdgeInsets.only(left: 30, right: 30),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
+                Card(
+                 margin: EdgeInsets.only(left: 20, right: 20,bottom: 10),
+              
                   child: Column(
                     children: [
                       Container(
@@ -397,15 +408,15 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                           children: [
                             Padding(
                                 padding: EdgeInsets.only(
-                                    left: 10, right: 10, top: 50)),
+                                    left: 15, right: 10, top: 50)),
                             Container(
-                              padding: EdgeInsets.only(right: 100),
+                              padding: EdgeInsets.only(right: 94),
                               child: Text(
                                 "Related Products",
                                 style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 16,
                                     color: Colors.black,
-                                    fontWeight: FontWeight.w500),
+                                    fontWeight: FontWeight.w300),
                               ),
                             ),
                             Container(
@@ -413,7 +424,7 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                               child: Text(
                                 "${widget.laptoprelatedList.length-1} Products",
                                 style:
-                                    TextStyle(color: Colors.blue, fontSize: 10),
+                                    TextStyle(color: Colors.blue, fontSize: 11,fontWeight: FontWeight.w300),
                               ),
                             )
                           ],
@@ -423,7 +434,7 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                         physics: BouncingScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         child: Container(
-                          margin: EdgeInsets.only(left: 20, bottom: 10,right: 10),
+                          margin: EdgeInsets.only(left: 10, bottom: 10,right: 10),
                           child: Row(
                             children: List.generate(
                                 widget.laptoprelatedList.length, (index) {
@@ -445,9 +456,9 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                                       child: Container(
                                         width: 130,
                                         height: 180,
-                                        padding: EdgeInsets.only(
-                                            left: 10, right: 10),
-                                        margin: EdgeInsets.all(5),
+                                          padding:
+                                          EdgeInsets.only(left: 10, right: 10),
+                                        margin: EdgeInsets.only(left: 8,right: 8,bottom: 10),
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(8),
@@ -473,7 +484,7 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                                                 style: TextStyle(
                                                     color: Colors.black45,
                                                   
-                                                    fontSize: 12),
+                                                    fontSize: 12,fontWeight: FontWeight.w300),
                                               ),
                                             ),
                                             Container(
@@ -481,50 +492,50 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                                                   EdgeInsets.only(bottom: 10),
                                               child: Text(
                                                 "Price:${widget.laptoprelatedList[index]['price']}",
-                                                style: TextStyle(fontSize: 12),
+                                                style: TextStyle(fontSize: 12,fontWeight: FontWeight.w300),
                                               ),
                                             )
                                           ],
                                         ),
                                       ),
                                     );
-                              SizedBox(
-                                width: 5,
-                              );
-                              Container(
-                                padding: EdgeInsets.only(left: 5, right: 5),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    border: Border.all(
-                                        color: Colors.black, width: 0.2)),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                        padding:
-                                            EdgeInsets.only(top: 10, bottom: 5),
-                                        child: Image.asset(
-                                          "assets/asusx409ja.jpg",
-                                          height: 120,
-                                        )),
-                                    Container(
-                                      padding: EdgeInsets.only(bottom: 5),
-                                      child: Text(
-                                        "Model - Asusx409ja ",
-                                        style: TextStyle(
-                                            color: Colors.black45,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.only(bottom: 10),
-                                      child: Text(
-                                        "Price-10,00000",
-                                        style: TextStyle(fontSize: 12),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
+                              // SizedBox(
+                              //   width: 5,
+                              // );
+                              // Container(
+                              //   padding: EdgeInsets.only(left: 5, right: 5),
+                              //   decoration: BoxDecoration(
+                              //       borderRadius: BorderRadius.circular(8),
+                              //       border: Border.all(
+                              //           color: Colors.black, width: 0.2)),
+                              //   child: Column(
+                              //     children: [
+                              //       Container(
+                              //           padding:
+                              //               EdgeInsets.only(top: 10, bottom: 5),
+                              //           child: Image.asset(
+                              //             "assets/asusx409ja.jpg",
+                              //             height: 120,
+                              //           )),
+                              //       Container(
+                              //         padding: EdgeInsets.only(bottom: 5),
+                              //         child: Text(
+                              //           "Model - Asusx409ja ",
+                              //           style: TextStyle(
+                              //               color: Colors.black45,
+                              //               fontSize: 12,fontWeight: FontWeight.w300),
+                              //         ),
+                              //       ),
+                              //       Container(
+                              //         padding: EdgeInsets.only(bottom: 10),
+                              //         child: Text(
+                              //           "Price-10,00000",
+                              //           style: TextStyle(fontSize: 12,fontWeight: FontWeight.w300),
+                              //         ),
+                              //       )
+                              //     ],
+                              //   ),
+                              // );
                             }),
                           ),
                         ),
@@ -564,7 +575,8 @@ class _LaptopdetailsPageState extends State<LaptopdetailsPage> {
                           "Purchase",
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(color: Colors.blue, fontSize: 12),
+                         
+                          style: TextStyle(color: Colors.blue, fontSize: 12,fontWeight: FontWeight.w300),
                         ),   ), Icon(
                         Icons.chevron_right,
                         size: 18,

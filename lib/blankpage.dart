@@ -19,9 +19,9 @@ class _BlankpageState extends State<Blankpage> {
         iconTheme: IconThemeData(color: Colors.blue),
         title: Text("My Address",
         style: TextStyle(
-          color: Colors.grey,
+          color: Colors.grey[700],
           fontSize: 16,
-          fontWeight:FontWeight.w400
+          fontWeight:FontWeight.w300
         ),
         
         
@@ -71,14 +71,16 @@ class _BlankpageState extends State<Blankpage> {
                                   child: Text(
                                     "Hello,",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
+                                        color: Colors.grey, fontSize: 15,
+                                        fontWeight: FontWeight.w300,
+                                        ),
                                   ),
                                 ),
                                 Container(
                                   child: Text(
                                     "Nooraiya khan",
                                     style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
+                                        fontSize: 18, color: Colors.black,fontWeight: FontWeight.w300,),
                                   ),
                                 ),
                               ],
@@ -117,7 +119,7 @@ class _BlankpageState extends State<Blankpage> {
                                   child: Text(
                                     "Home",
                                     style:
-                                        TextStyle(color: Colors.grey, fontSize: 13),
+                                        TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300,),
                                         
                                   ),
                                 ),
@@ -155,7 +157,7 @@ class _BlankpageState extends State<Blankpage> {
                             Text(
                               "Profile",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 13),
+                                  TextStyle(color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300,),
                             )
                           ],
                         )),
@@ -190,7 +192,7 @@ class _BlankpageState extends State<Blankpage> {
                                   Text(
                                     "Cart",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 13),
+                                        color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300,),
                                   )
                                 ],
                               ),
@@ -199,7 +201,7 @@ class _BlankpageState extends State<Blankpage> {
                           Text(
                             "4",
                             style: TextStyle(
-                                color: Colors.blue, fontSize: 13),
+                                color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300,),
                           )
                         ],
                       )),
@@ -234,7 +236,7 @@ class _BlankpageState extends State<Blankpage> {
                                   Text(
                                     "Orders",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 13),
+                                        color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300,),
                                   )
                                 ],
                               ),
@@ -243,7 +245,7 @@ class _BlankpageState extends State<Blankpage> {
                           Text(
                             "4",
                             style: TextStyle(
-                                color: Colors.blue, fontSize: 13),
+                                color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300,),
                           )
                         ],
                       )),
@@ -271,7 +273,7 @@ class _BlankpageState extends State<Blankpage> {
                             ),
                             Text(
                               "Address",
-                              style: TextStyle(color: Colors.grey, fontSize: 13),
+                              style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300,),
                             )
                           ],
                         )),
@@ -293,7 +295,7 @@ class _BlankpageState extends State<Blankpage> {
                           ),
                           Text(
                             "Vouchers",
-                            style: TextStyle(color: Colors.grey, fontSize: 13),
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300,),
                           )
                         ],
                       )),
@@ -320,7 +322,7 @@ class _BlankpageState extends State<Blankpage> {
                           ),
                           Text(
                             "Terms and Conditions",
-                            style: TextStyle(color: Colors.grey, fontSize: 13),
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300,),
                           ),
                         ],
                       )),
@@ -341,7 +343,7 @@ class _BlankpageState extends State<Blankpage> {
                           ),
                           Text(
                             "Logout",
-                            style: TextStyle(color: Colors.grey, fontSize: 13),
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300,),
                           ),
                         ],
                       )),

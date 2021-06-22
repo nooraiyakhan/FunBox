@@ -65,7 +65,7 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
             style: TextStyle(
                 color: Colors.grey,
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w300),
           ),
         ),
         body: SingleChildScrollView(
@@ -113,7 +113,7 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                             padding: EdgeInsets.all(5),
                             child: Text(
                               "${pageIndex + 1}/${sliderPic.length}",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300),
                             )),
                       ],
                     ),
@@ -133,13 +133,9 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
               ),
               Column(
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 30, right: 30, top: 10),
-                    // margin: EdgeInsets.only(right: 210),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
+                  Card(
+                    margin: EdgeInsets.only(left: 20,right: 20,top: 10),
+                    elevation: 1,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -154,11 +150,11 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                             children: [
                               Container(
                                 padding: EdgeInsets.only(
-                                    top: 10, bottom: 10, right: 20, left: 20),
+                                    top: 10, bottom: 10, left: 20,right: 20),
                                 child: Text(
                                   "${widget.wristwatchDetails['price']}",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 16),
+                                      color: Colors.white, fontSize: 16,fontWeight: FontWeight.w300),
                                 ),
                               )
                             ],
@@ -193,13 +189,13 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                             padding: EdgeInsets.only(
                                 top: 10, bottom: 10, right: 15, left: 15),
                             child: Text(
-                              "Add To Cart",
+                              "Add to Cart",
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 12),
+                                  TextStyle(color: Colors.white, fontSize: 12,fontWeight: FontWeight.w300),
                             ),
                           ),
                         ),
-                        InkWell(
+                        GestureDetector(
                           onTap: () {
                             setState(() {
                               if (isFav) {
@@ -235,14 +231,16 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.only(left: 30, right: 0),
+                margin: EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
+                  border: Border.all(width: 0.1,color: Colors.grey[700]),
+              
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: Container(
                   padding:
-                      EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 5),
+                      EdgeInsets.only(left: 20, right: 10, bottom: 15, top: 15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -251,64 +249,71 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                             right: 140, left: 0, top: 10, bottom: 8),
                         child: Text(
                           "Product Information",
-                          style: TextStyle(color: Colors.black, fontSize: 15),
+                          style: TextStyle(color: Colors.black, fontSize: 15,fontWeight: FontWeight.w300),
                         ),
                       ),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
-                            "Model:${widget.wristwatchDetails['name']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            "Model:${widget.wristwatchDetails['name']}",maxLines: 4,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
-                            "Case thickness:${widget.wristwatchDetails['case_thickness']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            "Case thickness:${widget.wristwatchDetails['case_thickness']}",maxLines: 4,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
-                            "Water resistant depth:${widget.wristwatchDetails['water_resistant_depth']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            "Water resistant depth:${widget.wristwatchDetails['water_resistant_depth']}",maxLines: 4,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
-                            "Class type:${widget.wristwatchDetails['class_type']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            "Class type:${widget.wristwatchDetails['class_type']}",maxLines: 4,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
-                            "Band width:${widget.wristwatchDetails['band_width']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            "Band width:${widget.wristwatchDetails['band_width']}",maxLines: 4,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
+                          )),
+                            Container(
+                          padding: EdgeInsets.only(
+                              right: 0, left: 0, top: 0, bottom: 8),
+                          child: Text(
+                            "Battery:${widget.wristwatchDetails['battery_backup']}",maxLines: 4,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
-                            "Status:${widget.wristwatchDetails['status']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            "Status:${widget.wristwatchDetails['status']}",maxLines: 1,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
-                            "Condition:${widget.wristwatchDetails['condition']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            "Condition:${widget.wristwatchDetails['condition']}",maxLines: 1,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
-                            "Posted:${widget.wristwatchDetails['posted']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            "Posted:${widget.wristwatchDetails['posted']}",maxLines: 2,
+                            style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                           )),
                     ],
                   ),
@@ -342,10 +347,11 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                       SizedBox(
                         width: 10,
                       ),
+                      
                       Container(
                         child: Text(
                           "Share",
-                          style: TextStyle(fontSize: 15, color: Colors.blue),
+                          style: TextStyle(fontSize: 15, color: Colors.blue,fontWeight: FontWeight.w300),
                         ),
                       )
                     ],
@@ -355,35 +361,32 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
               SizedBox(
                 height: 10,
               ),
-              Container(
-                  margin: EdgeInsets.only(left: 30, right: 30),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
+              Card(
+                  margin: EdgeInsets.only(left: 20, right: 20,bottom: 10),
+                
                   child: Column(children: [
                     Container(
                       child: Row(
                         children: [
                           Padding(
                               padding: EdgeInsets.only(
-                                  left: 10, right: 10, top: 50)),
+                                  left: 15, right: 10, top: 50)),
                           Container(
-                            padding: EdgeInsets.only(right: 100),
+                            padding: EdgeInsets.only(right: 94),
                             child: Text(
                               "Related Products",
                               style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 16,
                                   color: Colors.black,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w300),
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.only(right: 10),
+                            padding: EdgeInsets.only(right: 11),
                             child: Text(
                               "${widget.watchList.length - 1} Products",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 10),
+                                  TextStyle(color: Colors.blue, fontSize: 11,fontWeight: FontWeight.w300),
                             ),
                           )
                         ],
@@ -396,6 +399,7 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                         margin:
                             EdgeInsets.only(left: 20, bottom: 10, right: 10),
                         child: Row(
+                        //  mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children:
                               List.generate(widget.watchList.length, (index) {
                             return widget.wristwatchDetails['name'] ==
@@ -416,7 +420,8 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                                       height: 180,
                                       padding:
                                           EdgeInsets.only(left: 10, right: 10),
-                                      margin: EdgeInsets.all(5),
+                                          margin: EdgeInsets.only(left: 8,right: 8,bottom: 10),
+                                  //    margin: EdgeInsets.all(4),
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(8),
@@ -439,7 +444,7 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
-                                                  color: Colors.black45,
+                                                  color: Colors.black45,fontWeight: FontWeight.w300,
                                                   fontSize: 12),
                                             ),
                                           ),
@@ -448,7 +453,7 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                                                 EdgeInsets.only(bottom: 10),
                                             child: Text(
                                               "${widget.watchList[index]['price']}",
-                                              style: TextStyle(fontSize: 12),
+                                              style: TextStyle(fontSize: 12,fontWeight: FontWeight.w300),
                                             ),
                                           ),
                                         ],
@@ -489,7 +494,7 @@ class _WristwatchdetailsPageState extends State<WristwatchdetailsPage> {
                             "Purchase",
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: Colors.blue, fontSize: 12),
+                            style: TextStyle(color: Colors.blue, fontSize: 12,fontWeight: FontWeight.w300),
                           ),
                         ),
                         Icon(

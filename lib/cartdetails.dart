@@ -66,9 +66,9 @@ class _CartdetailsState extends State<Cartdetails> {
           title: Text(
             "Details",
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[700],
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+               fontWeight: FontWeight.w300,),
           ),
           actions: [
             InkWell(
@@ -96,7 +96,7 @@ class _CartdetailsState extends State<Cartdetails> {
                                     Container(
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
-                                          color: Colors.grey.withOpacity(0.7),
+                                          color: Colors.grey[700].withOpacity(0.7),
                                           borderRadius:
                                               BorderRadius.circular(100)),
                                       padding: EdgeInsets.all(10),
@@ -134,7 +134,7 @@ class _CartdetailsState extends State<Cartdetails> {
                                   "John Smith",
                                   style: TextStyle(
                                     color: Colors.blue,
-                                    fontWeight: FontWeight.w400,
+                                    fontWeight: FontWeight.w300,
                                     fontSize: 16,
                                   ),
                                 ),
@@ -163,6 +163,7 @@ class _CartdetailsState extends State<Cartdetails> {
                                         "01XXXXXXXXX",
                                         style: TextStyle(
                                             color: Colors.grey[700],
+                                            fontWeight: FontWeight.w300,
                                             //fontWeight: FontWeight.w900,
                                             fontSize: 12),
                                       ),
@@ -198,7 +199,7 @@ class _CartdetailsState extends State<Cartdetails> {
                                           "Call",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 13),
+                                              fontSize: 13,fontWeight: FontWeight.w300,),
                                         ),
                                       )
                                     ],
@@ -257,12 +258,12 @@ class _CartdetailsState extends State<Cartdetails> {
                         Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(2),
-                                color: Colors.grey),
+                                color: Colors.grey[700]),
                             margin: EdgeInsets.only(right: 30),
                             padding: EdgeInsets.all(5),
                             child: Text(
                               "${pageIndex + 1}/${sliderPic.length}",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300,),
                             )),
                       ],
                     ),
@@ -275,7 +276,7 @@ class _CartdetailsState extends State<Cartdetails> {
               CarouselIndicator(
                 count: sliderPic.length,
                 index: pageIndex,
-                color: Colors.grey,
+                color: Colors.grey[700],
                 activeColor: Colors.blue,
                 height: 7,
                 width: 7,
@@ -311,7 +312,7 @@ class _CartdetailsState extends State<Cartdetails> {
                               child: Text(
                                 "${widget.cartDetails['price']}",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 16),
+                                    color: Colors.white, fontSize: 16,fontWeight: FontWeight.w300,),
                               ),
                             ),
                           ],
@@ -332,7 +333,7 @@ class _CartdetailsState extends State<Cartdetails> {
                           padding: EdgeInsets.only(right: 10),
                           child: Icon(
                             Icons.favorite,
-                            color: isFav ? Colors.red : Colors.grey,
+                            color: isFav ? Colors.red : Colors.grey[700],
                           ),
                         ),
                       )
@@ -361,7 +362,7 @@ class _CartdetailsState extends State<Cartdetails> {
                             right: 0, left: 0, top: 10, bottom: 8),
                         child: Text(
                           "Product Information",
-                          style: TextStyle(color: Colors.black, fontSize: 15),
+                          style: TextStyle(color: Colors.black, fontSize: 15,fontWeight: FontWeight.w300,),
                         ),
                       ),
                       Container(
@@ -369,70 +370,70 @@ class _CartdetailsState extends State<Cartdetails> {
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Model:${widget.cartDetails['name']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Available Color:${widget.cartDetails['color']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Display:${widget.cartDetails['size']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Camera:${widget.cartDetails['camera']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Ram:${widget.cartDetails['ram']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Battery:${widget.cartDetails['battery']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Status:${widget.cartDetails['status']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Condition:${widget.cartDetails['condition']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Posted:${widget.cartDetails['posted']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                       Container(
                           padding: EdgeInsets.only(
                               right: 0, left: 0, top: 0, bottom: 8),
                           child: Text(
                             "Warranty:${widget.cartDetails['warranty']}",
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                           )),
                     ],
                   ),
@@ -469,7 +470,7 @@ class _CartdetailsState extends State<Cartdetails> {
                       Container(
                         child: Text(
                           "Share",
-                          style: TextStyle(fontSize: 15, color: Colors.blue),
+                          style: TextStyle(fontSize: 15, color: Colors.blue,fontWeight: FontWeight.w300,),
                         ),
                       )
                     ],

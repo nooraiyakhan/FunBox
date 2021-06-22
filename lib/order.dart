@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:second_project/addresspage.dart';
 import 'package:second_project/cart.dart';
+import 'package:second_project/contact.dart';
 import 'package:second_project/loginpage.dart';
 import 'package:second_project/main.dart';
 import 'package:second_project/mainpage.dart';
@@ -69,7 +70,7 @@ var orderDetails;
             style: TextStyle(
                 color: Colors.grey,
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w300),
           ),
         ),
         drawer: Drawer(
@@ -104,14 +105,14 @@ var orderDetails;
                                   child: Text(
                                     "Hello,",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
+                                        color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                                 Container(
                                   child: Text(
                                     "Nooraiya khan",
                                     style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
+                                        fontSize: 18, color: Colors.black,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                               ],
@@ -145,7 +146,7 @@ var orderDetails;
                               child: Text(
                                 "Home",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 13),
+                                    TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                               ),
                             ),
                           ],
@@ -180,7 +181,7 @@ var orderDetails;
                             Text(
                               "Profile",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 13),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -215,7 +216,7 @@ var orderDetails;
                                   Text(
                                     "Cart",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 13),
+                                        color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -224,7 +225,7 @@ var orderDetails;
                           Text(
                             "4",
                             style: TextStyle(
-                                color: Colors.blue, fontSize: 13),
+                                color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300),
                           )
                         ],
                       )),
@@ -260,7 +261,7 @@ var orderDetails;
                                   Text(
                                     "Orders",
                                     style: TextStyle(
-                                        color: Colors.blue, fontSize: 13),
+                                        color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -269,7 +270,7 @@ var orderDetails;
                           Text(
                             "4",
                             style: TextStyle(
-                                color: Colors.blue, fontSize: 13),
+                                color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300),
                           )
                         ],
                       )),
@@ -298,7 +299,7 @@ var orderDetails;
                             Text(
                               "Address",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 13),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -333,13 +334,13 @@ var orderDetails;
                                 Text(
                                   "Vouchers",
                                   style:
-                                      TextStyle(color: Colors.grey, fontSize: 13),
+                                      TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                 )
                               ],
                             ),
                             Container(
                               padding: EdgeInsets.only(right: 15),
-                              child: Text("4",style: TextStyle(color: Colors.blue),),
+                              child: Text("4",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300),),
                             )
                           ],
                         )),
@@ -376,7 +377,7 @@ var orderDetails;
                                     Text(
                                       "Favourite",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -384,7 +385,7 @@ var orderDetails;
                               Text(
                                 "2",
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 14), )],)),   ),
+                                    color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300), )],)),   ),
                   SizedBox(
                     height: 40,
                   ),
@@ -414,11 +415,38 @@ var orderDetails;
                             ),
                             Text(
                               "Terms and Conditions",
-                              style: TextStyle(color: Colors.grey, fontSize: 13),
+                              style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
                   ),
+                   SizedBox(
+                      height: 30,
+                    ),
+                    InkWell(
+                      onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact()));
+                      },
+                      child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.phone,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Contact Us",
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          )),
+                    ),
                   SizedBox(
                     height: 30,
                   ),
@@ -431,7 +459,7 @@ var orderDetails;
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                         Container(
-                          child: Text("Do you want to Log Out?",style: TextStyle(color: Colors.grey,fontSize: 15),),
+                          child: Text("Do you want to Log Out?",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                         ),
                         SizedBox(height: 20,),
                         Container(
@@ -452,7 +480,7 @@ var orderDetails;
                                   decoration: BoxDecoration(
                                     color: Colors.blue,borderRadius: BorderRadius.circular(5)
                                   ),
-                                  child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 15),),
+                                  child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w300),),
                                 ),
                               ),
                            
@@ -466,7 +494,7 @@ var orderDetails;
                                 decoration: BoxDecoration(
                                   color: Colors.blue,borderRadius: BorderRadius.circular(5)
                                 ),
-                                child: Text("No",style: TextStyle(color: Colors.white,fontSize: 15),),
+                                child: Text("No",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                             ),
                           ],
@@ -490,7 +518,7 @@ var orderDetails;
                             ),
                             Text(
                               "Logout",
-                              style: TextStyle(color: Colors.grey, fontSize: 14),
+                              style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
@@ -571,7 +599,8 @@ var orderDetails;
                                               "${orderList[index]['status']}",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 10))),
+                                                  fontWeight: FontWeight.w300,
+                                                  fontSize: 11))),
                                     ],
                                   ),
                                   Container(
@@ -579,9 +608,9 @@ var orderDetails;
                                           EdgeInsets.only(right: 0, top: 10),
                                       margin: EdgeInsets.only(left: 15),
                                       child: Text(
-                                        "Price - ${orderList[index]['price']}/-",
+                                        "Price - ${orderList[index]['price']}",
                                         style: TextStyle(
-                                            color: Colors.grey, fontSize: 12),
+                                            color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                       )),
                                   // Container(
                                   //     padding:

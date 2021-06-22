@@ -9,6 +9,8 @@ class Password extends StatefulWidget {
 class _PasswordState extends State<Password> {
   bool isNewPasswordBlank=false;
   bool isConfirmPasswordBlank = false;
+  bool isSeen=false;
+    String confirmOkMsg = "Confirm password field is empty!";
   var child;
   TextEditingController newpasswordcontroller = new TextEditingController();
   TextEditingController confirmpasswordcontroller=new TextEditingController();
@@ -53,22 +55,55 @@ class _PasswordState extends State<Password> {
           Container(
             padding: EdgeInsets.fromLTRB(10,0,0,0),
             margin: EdgeInsets.fromLTRB(20,0,20,0),
+            
             decoration: BoxDecoration(
               border: Border.all(width: 0.1),
               borderRadius:BorderRadius.circular(7),
               color: Colors.grey[100]
               ),
-              child: TextField(
-               controller: newpasswordcontroller, 
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Type Your New Password...",
-                  hintStyle:TextStyle(color: Colors.grey,fontSize: 15),
-                  labelText:"Enter New Password" ,
-                  labelStyle: TextStyle(color: Colors.blue)
-                ),
+              child:
+               Row(
+                 children: [
+                   Flexible(
+                     child: TextField(
+                     controller: newpasswordcontroller, 
+                     obscureText: isSeen==false?true:false,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Type Your New Password...",
+                        hintStyle:TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),
+                        labelText:"Enter New Password" ,
+                        labelStyle: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300)
+                      ),
               ),
+                   ),
+                   GestureDetector(
+                     onTap: (){
+                       setState(() {
+                         if (isSeen==false){
+                           isSeen=true;
+                         }else (isSeen = false);
+                       });
+                     },
+                     child: 
+                     Padding(
+                       padding: EdgeInsets.only(right: 10),
+                       child: Icon(
+                         isSeen==false
+                         ?Icons.visibility_off
+                         :Icons.visibility,
+                         color: Colors.grey,
+                          size: 22,
+
+                       ),
+                     )
+                     ,)
+
+                 ],
+               ),
+              
           ),
+          SizedBox(height: 10,),
           isNewPasswordBlank
           ?Container(
             child: Row(
@@ -76,12 +111,13 @@ class _PasswordState extends State<Password> {
               children: [
                 Icon(Icons.error_outline,color: Colors.redAccent,size: 17,),
                 SizedBox(width: 5,),
-                Text("New Password Field Is Empty")
+                Text("New password field is empty!",style: TextStyle(fontWeight: FontWeight.w300),)
               ],
             ),
 
           )
           :Container(),
+   
           SizedBox(height: 20,),
               Container(
             padding: EdgeInsets.fromLTRB(10,0,0,0),
@@ -91,17 +127,49 @@ class _PasswordState extends State<Password> {
               borderRadius:BorderRadius.circular(7),
               color: Colors.grey[100]
               ),
-              child: TextField(
-               controller: confirmpasswordcontroller, 
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Type Your New Password...",
-                  hintStyle:TextStyle(color: Colors.grey,fontSize: 15),
-                  labelText:"Confirm Password" ,
-                  labelStyle: TextStyle(color: Colors.blue)
-                ),
+              child:
+               Row(
+                 children: [
+                   Flexible(
+                     child: TextField(
+                     controller: confirmpasswordcontroller, 
+                     obscureText: isSeen==false?true:false,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Type Your New Password...",
+                        hintStyle:TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),
+                        labelText:"Confirm Password" ,
+                        labelStyle: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300)
+                      ),
               ),
+                   ),
+                   GestureDetector(onTap: (){
+                     setState(() {
+                       if (isSeen == false){
+                         isSeen = true;
+                       }else{
+                         isSeen=false;
+                       }
+                     },
+                    
+                     );
+                   },
+                   child: 
+                   Padding(
+                     padding: EdgeInsets.only(right: 10),
+                     child: Icon(
+                       isSeen == false
+                       ?Icons.visibility_off
+                       :Icons.visibility,
+                       color: Colors.grey,
+                       size: 22,
+                     ),
+                   ),
+                   )
+                 ],
+               ),
           ),
+          SizedBox(height: 10,),
           isConfirmPasswordBlank
           ?Container(
             child: Row(
@@ -109,7 +177,7 @@ class _PasswordState extends State<Password> {
               children: [
                 Icon(Icons.error_outline,color: Colors.redAccent,size: 17,),
                 SizedBox(width: 5,),
-                Text("New Password Field Is Empty")
+                Text("Confirm password field is empty",style: TextStyle(fontWeight: FontWeight.w300),)
               ],
             ),
 
@@ -122,12 +190,24 @@ class _PasswordState extends State<Password> {
                
                if (newpasswordcontroller.text.isEmpty){
                  isNewPasswordBlank=true;
+                 isConfirmPasswordBlank=false;
                }
                else if
                (confirmpasswordcontroller.text.isEmpty)
                {
+                 isNewPasswordBlank=false;
                  isConfirmPasswordBlank=true;
                }
+              
+               else if (newpasswordcontroller.text !=
+                                    confirmpasswordcontroller.text) {
+                               
+                                  isNewPasswordBlank = false;
+                                  isConfirmPasswordBlank = false;
+;
+                                  confirmOkMsg = "Password not matched!";
+                                }
+
                else{
                  Navigator.push(context,
                  MaterialPageRoute(builder: (context)=>Loginpage())
@@ -135,8 +215,7 @@ class _PasswordState extends State<Password> {
                }
              });
            },
-            child: Container(
-                                            margin:
+            child: Container( margin:
                                                 EdgeInsets.only(top:30, bottom: 20,left: 20,right: 20),
                                             padding: EdgeInsets.all(10),
                                             decoration: BoxDecoration(
@@ -153,7 +232,7 @@ class _PasswordState extends State<Password> {
                                                       "Submit",
                                                       style: TextStyle(
                                                           color: Colors.white,
-                                                          fontSize: 16),
+                                                          fontSize: 16,fontWeight: FontWeight.w300),
                                                     ),
                                                     
                                                   ),

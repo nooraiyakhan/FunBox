@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:second_project/addresspage.dart';
 import 'package:second_project/cart.dart';
+import 'package:second_project/contact.dart';
 import 'package:second_project/loginpage.dart';
 import 'package:second_project/mainpage.dart';
 import 'package:second_project/order.dart';
@@ -23,24 +24,26 @@ class _TermspageState extends State<Termspage> {
         title: Text(
           "Terms and Conditions",
           style: TextStyle(
-              color: Colors.grey, fontSize: 16, fontWeight: FontWeight.normal),
+              color: Colors.grey[700], fontSize: 16, fontWeight: FontWeight.w300),
         ),
       ),
       body:Column(
         
      crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        Padding(padding: EdgeInsets.only(top: 10,left: 10)),
+        Padding(padding: EdgeInsets.only(top: 20,left: 20)),
           Container(
             padding: EdgeInsets.only(left: 10),
-            child: Text("* 1 year official warranty"),),
+            child: Text("* 1 year official warranty.",style: TextStyle(fontWeight: FontWeight.w300,fontSize:14),),),
+            SizedBox(height: 5,),
            Container(
              padding: EdgeInsets.only(left: 10),
-             child: Text("* Used phone have 7 days warranty(without display and battery)"),),
+             child: Text("* Used phone have 7 days warranty(without display and battery).",style: TextStyle(fontWeight: FontWeight.w300,fontSize:14),),),
+            SizedBox(height: 5,),
             Container(
               padding: EdgeInsets.only(left: 10),
-              child: Text("* You get 25% reduction if you return product"),)
-        ],
+              child: Text("* You get 25% reduction if you return product.",style: TextStyle(fontWeight: FontWeight.w300,fontSize:14),)
+            )],
       ),
       drawer: Drawer(
         child: SafeArea(
@@ -116,7 +119,7 @@ class _TermspageState extends State<Termspage> {
                               Text(
                                 "Home",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               ),
                             ],
                           ),
@@ -148,7 +151,7 @@ class _TermspageState extends State<Termspage> {
                             Text(
                               "Profile",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -182,7 +185,7 @@ class _TermspageState extends State<Termspage> {
                                   Text(
                                     "Cart",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 14),
+                                        color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -223,7 +226,7 @@ class _TermspageState extends State<Termspage> {
                                   Text(
                                     "Orders",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 14),
+                                        color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -261,7 +264,7 @@ class _TermspageState extends State<Termspage> {
                             Text(
                               "Address",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -300,7 +303,7 @@ class _TermspageState extends State<Termspage> {
                                   Text(
                                     "Vouchers",
                                     style:
-                                        TextStyle(color: Colors.grey, fontSize: 14),
+                                        TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                   )
                                 ],
                         ),
@@ -348,7 +351,7 @@ class _TermspageState extends State<Termspage> {
                                     Text(
                                       "Favourite",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -358,13 +361,13 @@ class _TermspageState extends State<Termspage> {
                                 style: TextStyle(
                                     color: Colors.blue, fontSize: 14), )],)),   ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Divider(
                     height: 2,
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 20,
                   ),
                   GestureDetector(
                     onTap: (){
@@ -388,15 +391,42 @@ class _TermspageState extends State<Termspage> {
                             ),
                             Text(
                               "Terms and Conditions",
-                              style: TextStyle(color: Colors.blue, fontSize: 14),
+                              style: TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
                   ),
+                   SizedBox(
+                      height: 30,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact()));
+                      },
+                      child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.phone,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Contact Us",
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          )),
+                    ),
                SizedBox(
                     height: 30,
                   ),
-                  InkWell(
+                  GestureDetector(
                     onTap: (){
                       
                      showDialog(context: context,
@@ -405,7 +435,7 @@ class _TermspageState extends State<Termspage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                         Container(
-                          child: Text("Do you want to Log Out?",style: TextStyle(color: Colors.grey,fontSize: 15),),
+                          child: Text("Do you want to Log Out?",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                         ),
                         SizedBox(height: 20,),
                         Container(
@@ -426,7 +456,7 @@ class _TermspageState extends State<Termspage> {
                                   decoration: BoxDecoration(
                                     color: Colors.blue,borderRadius: BorderRadius.circular(5)
                                   ),
-                                  child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 15),),
+                                  child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w300),),
                                 ),
                               ),
                            
@@ -440,7 +470,7 @@ class _TermspageState extends State<Termspage> {
                                 decoration: BoxDecoration(
                                   color: Colors.blue,borderRadius: BorderRadius.circular(5)
                                 ),
-                                child: Text("No",style: TextStyle(color: Colors.white,fontSize: 15),),
+                                child: Text("No",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                             ),
                           ],
@@ -464,7 +494,7 @@ class _TermspageState extends State<Termspage> {
                             ),
                             Text(
                               "Logout",
-                              style: TextStyle(color: Colors.grey, fontSize: 14),
+                              style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),

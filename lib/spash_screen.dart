@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Shop",
+                  "Fun",
                   style: TextStyle(
                       fontSize: 25,
                       color: Colors.blue,
@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 //SizedBox(width:5),
 
                 Text(
-                  "ify",
+                  "Box",
                   style: TextStyle(
                       fontSize: 25,
                       color: Colors.black,

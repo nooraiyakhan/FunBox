@@ -23,7 +23,7 @@ class _EditpasswordPageState extends State<EditpasswordPage> {
             children: [
               Container(
                 padding: EdgeInsets.only(right: 170),
-                child: Text("Edit Password",style: TextStyle(color: Colors.black45,fontWeight: FontWeight.bold,fontSize: 17,),
+                child: Text("Edit Password",style: TextStyle(color: Colors.grey[700],fontWeight: FontWeight.w300,fontSize: 17,),
               ),
                ) ],
           )
@@ -52,7 +52,8 @@ class _EditpasswordPageState extends State<EditpasswordPage> {
                    fontSize: 15,
                  ),
                  labelText: "Enter Old Password",labelStyle: TextStyle(
-                   color: Colors.blue
+                   color: Colors.blue,
+                   fontWeight: FontWeight.w300
                  ),
              border: InputBorder.none  ),
                
@@ -77,9 +78,11 @@ class _EditpasswordPageState extends State<EditpasswordPage> {
                  hintStyle: TextStyle(
                    color: Colors.black54,
                    fontSize: 15,
+                   fontWeight: FontWeight.w300
                  ),
                  labelText: "Enter New Password",labelStyle: TextStyle(
-                   color: Colors.blue
+                   color: Colors.blue,
+                   fontWeight: FontWeight.w300
                  ),
              border: InputBorder.none  ),
                
@@ -104,9 +107,11 @@ class _EditpasswordPageState extends State<EditpasswordPage> {
                  hintStyle: TextStyle(
                    color: Colors.black54,
                    fontSize: 15,
+                   fontWeight: FontWeight.w300
                  ),
                  labelText: "Confirm Password",labelStyle: TextStyle(
-                   color: Colors.blue
+                   color: Colors.blue,
+                   fontWeight: FontWeight.w300
                  ),
              border: InputBorder.none  ),
                
@@ -130,7 +135,7 @@ class _EditpasswordPageState extends State<EditpasswordPage> {
                ),
                SizedBox(width: 5,),
                Container(
-                   padding: EdgeInsets.only(top:5,bottom: 5 ), child: Text("Edit",style: TextStyle(color: Colors.white,fontSize: 17),),
+                   padding: EdgeInsets.only(top:5,bottom: 5 ), child: Text("Edit",style: TextStyle(color: Colors.white,fontSize: 17,fontWeight: FontWeight.w300),),
                ) ],   ),   onPressed: (){
                     showDialog(context: context,
                     builder: (BuildContext context)=>CupertinoAlertDialog(
@@ -138,7 +143,7 @@ class _EditpasswordPageState extends State<EditpasswordPage> {
                       actions: [
                         CupertinoDialogAction(
                           isDefaultAction: true,
-                          child:Text("Done",style: TextStyle(color: Colors.blue),),
+                          child:Text("Done",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300),),
                           onPressed: (){
                             print("Done",);
                             Navigator.push(context, 

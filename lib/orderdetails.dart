@@ -16,7 +16,7 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
         actions: [
           
         new Container(
-           child:Text("Order Details",style: TextStyle(fontSize: 17,color: Colors.grey[600],),),
+           child:Text("Order Details",style: TextStyle(fontSize: 16,color: Colors.grey[600],fontWeight: FontWeight.w300),),
            padding: EdgeInsets.only(top: 18,right: 200),
          ),
          
@@ -45,7 +45,7 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
                       children: [
                         SizedBox(height: 10,),
                         Container(
-                          child: Text("Order Information",style:TextStyle(fontSize: 16,color: Colors.black),),
+                          child: Text("Order Information",style:TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.w300),),
                         ),
                         
                          SizedBox(height: 22,),
@@ -53,7 +53,7 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              child: Text("Status",style: TextStyle(color: Colors.grey,fontSize: 15),),
+              child: Text("Status",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                           Container(
                              child: Row(
@@ -64,7 +64,7 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
                               ),
                               SizedBox(width: 5,),
                               Container(
-                                child: Text("Deliverd",style: TextStyle(color: Colors.blue,fontSize: 15),),
+                                child: Text("Deliverd",style: TextStyle(color: Colors.blue,fontSize: 15,fontWeight: FontWeight.w300),),
                               )
                                ],
                              ) )  
@@ -74,11 +74,11 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              child: Text("Order Number",style: TextStyle(color: Colors.grey,fontSize: 15),),
+              child: Text("Order Number",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                           Container(
                              child: Container(
-                               child: Text("#f5qdb",style: TextStyle(color: Colors.grey,fontSize: 15),),
+                               child: Text("#f5qdb",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                              ) )  
           ],),
     ]
@@ -100,24 +100,23 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
                       children: [
                         SizedBox(height: 10,),
                         Container(
-                          child: Text("Order Pricing",style:TextStyle(fontSize: 16,color: Colors.black),),
+                          child: Text("Order Pricing",style:TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.w300),),
                         ),
                         SizedBox(height: 22,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              child: Text("Total Price",style: TextStyle(color: Colors.grey,fontSize: 15),),
+              child: Text("Total Price",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                           Container(
 
-                             child:Row(
+                             child:
+                             Row(
                                children: [
+                            
                               Container(
-                              child: Icon(Icons.attach_money,size: 15,color: Colors.grey,),
-                              ),
-                              Container(
-                                child: Text("5000.0",style: TextStyle(color: Colors.grey,fontSize: 15),),
+                                child: Text("5000.0/-",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                               )
                                ],
                              )
@@ -130,10 +129,10 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              child: Text("No. Of Product",style: TextStyle(color: Colors.grey,fontSize: 15),),
+              child: Text("No. Of Product",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                            Container(
-                               child: Text("4",style: TextStyle(fontSize: 15,color: Colors.grey),),
+                               child: Text("4",style: TextStyle(fontSize: 15,color: Colors.grey,fontWeight: FontWeight.w300),),
                              )  
           ], ),
        
@@ -142,19 +141,17 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              child: Text("Discount",style: TextStyle(color: Colors.grey,fontSize: 15),),
+              child: Text("Discount",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                                 Container(
                              child: Row(
                                children: [
                                  Container(
-                                   child: Text("-",style: TextStyle(fontSize: 15,color: Colors.blue),),
+                                   child: Text("-",style: TextStyle(fontSize: 15,color: Colors.blue,fontWeight: FontWeight.w300),),
                                  ),
-                                  Container(
-                              child: Icon(Icons.attach_money,size: 15,color: Colors.blue,),
-                              ),
+                                 
                               Container(
-                                child: Text("500.0",style: TextStyle(color: Colors.blue,fontSize: 15),),
+                                child: Text("500.0/-",style: TextStyle(color: Colors.blue,fontSize: 15,fontWeight: FontWeight.w300),),
                               )
                                ],
                              ) ) 
@@ -166,17 +163,15 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              child: Text("Shipping Cost",style: TextStyle(color: Colors.grey,fontSize: 15),),
+              child: Text("Delivery charge",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                            Container(
                              child: Row(
                                children: [
                                 
-                                  Container(
-                              child: Icon(Icons.attach_money,size: 15,color: Colors.grey,),
-                              ),
+                                 
                               Container(
-                                child: Text("200.0",style: TextStyle(color: Colors.grey,fontSize: 15),),
+                                child: Text("200.0/-",style: TextStyle(color: Colors.grey,fontSize: 15),),
                               )
                                ],
                              ) )  
@@ -189,17 +184,15 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              child: Text("Total Payable",style: TextStyle(color: Colors.grey,fontSize: 15),),
+              child: Text("Total Payable",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                            Container(
                              child: Row(
                                children: [
                                 
-                                  Container(
-                              child: Icon(Icons.attach_money,size: 15,color: Colors.black,),
-                              ),
+                               
                               Container(
-                                child: Text("4700.0",style: TextStyle(color: Colors.black,fontSize: 15),),
+                                child: Text("4700.0/-",style: TextStyle(color: Colors.black,fontSize: 15),),
                               )
                                ],
                              ) ), ],  ),
@@ -221,14 +214,14 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            child: Text("Deliver To ",style: TextStyle(color: Colors.black,fontSize: 16),),
+                            child: Text("Deliver To ",style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w300),),
                           ),
                          ],
         ), 
         SizedBox(height: 20,),
              Container(
                padding: EdgeInsets.only(bottom: 5),
-               child: Text("John Smitha",style: TextStyle(color: Colors.grey,fontSize: 14),),
+               child: Text("John Smitha",style: TextStyle(color: Colors.grey,fontSize: 14,fontWeight: FontWeight.w300),),
              ),
      SizedBox(height: 10,),
 
@@ -244,7 +237,7 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
                                children: [
                                  Container(
                                   // padding: EdgeInsetsDirectional.only(end: 165),
-                                   child: Text("New York,USA",style: TextStyle(color: Colors.grey,fontSize: 14),)
+                                   child: Text("New York,USA",style: TextStyle(color: Colors.grey,fontSize: 14,fontWeight: FontWeight.w300),)
                                  ),
                              
                                ],
@@ -256,7 +249,7 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
            SizedBox(height: 40,),
              Container(
                padding: EdgeInsets.only(bottom: 5),
-               child: Text("Delivery Date",style: TextStyle(color: Colors.grey,fontSize: 15),),
+               child: Text("Delivery Date",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),),
              ),
      SizedBox(height: 10,),
 
@@ -272,7 +265,7 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
                                children: [
                                  Container(
                                   // padding: EdgeInsetsDirectional.only(end: 165),
-                                   child: Text("08-11-2020",style: TextStyle(color: Colors.grey),)
+                                   child: Text("08-11-2020",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300),)
                                  ),
                                  SizedBox(width: 155,),
                              
@@ -312,7 +305,7 @@ class _OrderdetailspageState extends State<Orderdetailspage> {
                                               "Reorder",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 16),
+                                                  fontSize: 16,fontWeight: FontWeight.w300),
                                             ),
                                             
                                             

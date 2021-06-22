@@ -1,18 +1,28 @@
 import 'dart:convert';
+import 'dart:io';
+import 'dart:math';
 
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:second_project/editpassword.dart';
 import 'package:second_project/main.dart';
 import 'package:second_project/profile.dart';
-
+import 'package:image_picker/image_picker.dart';
 class EditprofilePage extends StatefulWidget {
   @override
   _EditprofilePageState createState() => _EditprofilePageState();
 }
 
 class _EditprofilePageState extends State<EditprofilePage> {
-    bool isNameBlank=false;
+File _image;
+
+Future getImage() async{
+final image= await ImagePicker.pickImage(source: ImageSource.gallery);
+setState(() {
+ _image=image;
+});
+}
+  bool isNameBlank=false;
   bool isPhoneBlank=false;
   bool isPhoneInvalid=false;
   bool isEmailBlank=false;
@@ -42,7 +52,7 @@ class _EditprofilePageState extends State<EditprofilePage> {
                   padding: EdgeInsets.only(right: 150),
                   child: Text(
                     "Edit Profile",
-                    style: TextStyle(color: Colors.grey, fontSize: 15),
+                    style: TextStyle(color: Colors.grey[700], fontSize: 16,fontWeight: FontWeight.w300),
                   ),
                 ),
                 GestureDetector(
@@ -76,51 +86,91 @@ class _EditprofilePageState extends State<EditprofilePage> {
                         Container(
                           width: 100,
                           height: 100,
+                          // width: 100,
+                          // height: 100,
                           margin: EdgeInsets.only(
                             top: 10,
                             left: 0,
                             bottom: 10,
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(50),
-                            child: Image.asset(
-                              "assets/profile.jpg",
+                          child: ClipOval(
+                          
+                            child: _image==null?
+                           
+                            Center(
+                              
+                              child: Text("No image found",textAlign: TextAlign.center,)):Image.file(_image,height: 200,width: 200,
+                            fit: BoxFit.cover,
+                            
                             ),
+                          
+                            //  Image.asset(
+                            //   "assets/profile.jpg",
+                            // ),
                           ),
                         ),
                         Container(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                  height: 40,
-                                  width: 180,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[100],
-                                    borderRadius: BorderRadius.circular(5),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        child: Icon(
-                                          Icons.photo,
-                                          color: Colors.black45,
-                                          size: 17,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Container(
-                                        child: Text(
-                                          "Select photo",
-                                          style:
-                                              TextStyle(color: Colors.black45),
-                                        ),
-                                      )
-                                    ],
-                                  )),
+                              GestureDetector(
+                                onTap: (){
+                                  getImage();
+                                },
+                                
+                                child: Card(
+                                  elevation: 1,
+                              child: Row(
+                              
+                                children: [
+                                 Container(
+                                   margin: EdgeInsets.only(left: 10,top: 10,bottom: 10),
+                                   child:   Icon(Icons.photo,color: Colors.grey,size: 20,),
+                                 ),
+                             SizedBox(width: 5,),
+                                  Container(
+                                    margin: EdgeInsets.only(right: 10),
+                                    child: Text("Select photo",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),))
+
+                                ],
+                              ),
+
+                              ),),
+                            
+                              // Center(
+                                
+                              //   child:
+                              //    FloatingActionButton(
+                              //      onPressed: getImage,
+                              //      tooltip: 'Increment',
+
+                              //      child: Container(
+                              //         height: 40,
+                              //         width: 180,
+                              //         decoration: BoxDecoration(
+                              //           color: Colors.grey[100],
+                              //           borderRadius: BorderRadius.circular(5),
+                              //         ),
+                              //         child: Row(
+                              //           mainAxisAlignment: MainAxisAlignment.center,
+                              //           children: [
+                              //             Container(
+                              //               child: Icon(
+                              //                 Icons.photo,
+                              //                 color: Colors.black45,
+                              //                 size: 17,
+                              //               ),
+                              //             ),
+                              //             SizedBox(
+                              //               width: 5,
+                              //             ),
+                              //             // Container(
+                              //             //   child: Icon(Icons.camera_alt)
+                              //             // )
+                              //           ],
+                              //         )),
+                              //    ),
+                              // ),
                             ],
                           ),
                         ),
@@ -151,12 +201,14 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                     decoration: InputDecoration(
                                         hintText: "Example name",
                                         hintStyle: TextStyle(
-                                          color: Colors.grey,
+                                          color: Colors.grey[700],
                                           fontSize: 15,
+                                          fontWeight: FontWeight.w300
                                         ),
                                         labelText: "Enter name",
                                         labelStyle: TextStyle(
                                           color: Colors.blue,
+                                          fontWeight: FontWeight.w300
                                         ),
                                         border: InputBorder.none),
                                   )),
@@ -172,7 +224,7 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                       SizedBox(width: 5,),
                                       Text(
                                         "Name field is blank",
-                                        style: TextStyle(color: Colors.redAccent),
+                                        style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),
                                       )
                                     ],
                                   )
@@ -207,12 +259,14 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                     decoration: InputDecoration(
                                         hintText: "01XXXXXXXXX",
                                         hintStyle: TextStyle(
-                                          color: Colors.grey,
+                                          color: Colors.grey[700],
                                           fontSize: 15,
+                                          fontWeight: FontWeight.w300
                                         ),
                                         labelText: "Enter contact number",
                                         labelStyle: TextStyle(
                                           color: Colors.blue,
+                                          fontWeight: FontWeight.w300
                                         ),
                                         border: InputBorder.none),
                                   )),
@@ -222,7 +276,7 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Icon(Icons.error_outline,color: Colors.redAccent,size: 17,),
-                                      Text("Phone number field is blank",style: TextStyle(color: Colors.redAccent),)
+                                      Text("Phone number field is blank",style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),)
                                     ],
                                   )
                                   :Container(),
@@ -232,7 +286,7 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                     child: Text(
                                       "${phone.length}/11",
                                       textAlign: TextAlign.left,
-                                      style: TextStyle(color: Colors.grey),
+                                      style: TextStyle(color: Colors.grey[700],fontWeight: FontWeight.w300),
                                     ),
                                   ),
                                    SizedBox(height: 10,),
@@ -241,7 +295,7 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Icon(Icons.error_outline,color: Colors.redAccent,size: 17,),
-                                      Text("Phone number is invalid",style: TextStyle(color: Colors.redAccent),),
+                                      Text("Phone number is invalid",style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),),
                                     ],
                                   ):Container(),
                               SizedBox(
@@ -264,12 +318,14 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                       
                                         hintText: "example@demo.com",
                                         hintStyle: TextStyle(
-                                          color: Colors.grey,
+                                          color: Colors.grey[700],
                                           fontSize: 15,
+                                          fontWeight: FontWeight.w300
                                         ),
                                         labelText: "Enter email",
                                         labelStyle: TextStyle(
                                           color: Colors.blue,
+                                          fontWeight: FontWeight.w300
                                         ),
                                         border: InputBorder.none),
                                   )),
@@ -283,7 +339,7 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                        
                                      ),
                                      Container(
-                                       child: Text("Email field is blank",style: TextStyle(color: Colors.redAccent),),
+                                       child: Text("Email field is blank",style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),),
                                      )
                                    ],
                                   )
@@ -297,7 +353,7 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                          child: Icon(Icons.error_outline,color: Colors.red,size: 17,),
                                        ),
                                        Container(
-                                         child:Text("Email is invalid",style: TextStyle(color: Colors.redAccent),),
+                                         child:Text("Email is invalid",style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),),
                                        )
                                      ],
                                    ):Container(),
@@ -374,7 +430,7 @@ class _EditprofilePageState extends State<EditprofilePage> {
                                       children: [
                                         Container(child: Icon(Icons.edit,color: Colors.white,size: 17,),),
                                         SizedBox(width: 5,),
-                                        Container(child: Text("Edit",style: TextStyle(color: Colors.white,fontSize: 16),),)
+                                        Container(child: Text("Edit",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w300),),)
                                       ],
                                     ),
                                       

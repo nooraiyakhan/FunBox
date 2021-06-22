@@ -61,7 +61,7 @@ class _SendverpageState extends State<Sendverpage> {
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Enter Verification Code",
-                                  hintStyle: TextStyle(color: Colors.grey),
+                                  hintStyle: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300),
                                 ),
                               ),
                             ),
@@ -85,6 +85,7 @@ class _SendverpageState extends State<Sendverpage> {
                           ],
                         ),
                       ),
+                      SizedBox(height: 10,),
                       isPassBlank
                           ? Container(
                               margin: EdgeInsets.only(top: 10),
@@ -99,7 +100,7 @@ class _SendverpageState extends State<Sendverpage> {
                                   SizedBox(
                                     width: 5,
                                   ),
-                                  Text("Code Field Is Empty")
+                                  Text("Code Field Is Empty",style: TextStyle(fontWeight: FontWeight.w300),)
                                 ],
                               ),
                             )
@@ -132,7 +133,7 @@ class _SendverpageState extends State<Sendverpage> {
                                   child: Text(
                                     "Done",
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
+                                        color: Colors.white, fontSize: 16,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                                 SizedBox(

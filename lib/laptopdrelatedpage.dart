@@ -34,7 +34,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
         title: Text(
           "Details",
           style: TextStyle(
-              color: Colors.grey, fontSize: 16, fontWeight: FontWeight.normal),
+              color: Colors.grey[700], fontSize: 16, fontWeight: FontWeight.w300),
         ),
         actions: [
            InkWell(
@@ -62,7 +62,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                                   Container(
                                     alignment: Alignment.center,
                                     decoration: BoxDecoration(
-                                        color: Colors.grey.withOpacity(0.7),
+                                        color: Colors.grey[700].withOpacity(0.7),
                                         borderRadius:
                                             BorderRadius.circular(100)),
                                     padding: EdgeInsets.all(10),
@@ -100,7 +100,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                                 "John Smith",
                                 style: TextStyle(
                                   color: Colors.blue,
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w300,
                                   fontSize: 16,
                                 ),
                               ),
@@ -129,7 +129,9 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                                        
                                           color: Colors.grey[700],
                                           //fontWeight: FontWeight.w900,
-                                          fontSize: 12),
+                                          fontSize: 12,
+                                          
+                                          fontWeight: FontWeight.w300),
                                     ),
                                   )
                                 ],
@@ -162,7 +164,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                                       child: Text(
                                         "Call",
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 13),
+                                            color: Colors.white, fontSize: 13,fontWeight: FontWeight.w300),
                                       ),
                                     )
                                   ],
@@ -221,13 +223,13 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2),
-                          color: Colors.grey,
+                          color: Colors.grey[700],
                         ),
                         margin: EdgeInsets.only(right: 30),
                         padding: EdgeInsets.all(5),
                         child: Text(
                           "${pageIndex + 1}/${sliderPic.length}",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300),
                         ),
                       )
                     ],
@@ -241,7 +243,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
             CarouselIndicator(
               count: sliderPic.length,
               index: pageIndex,
-              color: Colors.grey,
+              color: Colors.grey[700],
               activeColor: Colors.blue,
               height: 7,
               width: 7,
@@ -281,7 +283,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                               child: Text(
                                 "10,00000...",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 16),
+                                    color: Colors.white, fontSize: 16,fontWeight: FontWeight.w300),
                               ),
                             )
                           ],
@@ -302,7 +304,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                           padding: EdgeInsets.only(right: 10),
                           child: Icon(
                             Icons.favorite,
-                            color: isFav?Colors.red:Colors.grey
+                            color: isFav?Colors.red:Colors.grey[700]
                           ),
                         ),
                       )
@@ -331,7 +333,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                           right: 0, left: 0, top: 10, bottom: 8),
                       child: Text(
                         "Product Information",
-                        style: TextStyle(color: Colors.black, fontSize: 15),
+                        style: TextStyle(color: Colors.black, fontSize: 15,fontWeight: FontWeight.w300),
                       ),
                     ),
                     Container(
@@ -339,63 +341,63 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "Brand:${widget.laptopDetails['name']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                            Container(
                         padding: EdgeInsets.only(
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "Display:${widget.laptopDetails['display']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                            Container(
                         padding: EdgeInsets.only(
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "Storage:${widget.laptopDetails['storage']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                                                    Container(
                         padding: EdgeInsets.only(
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "Memory:${widget.laptopDetails['memory']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                            Container(
                         padding: EdgeInsets.only(
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "Graphics:${widget.laptopDetails['graphics']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                            Container(
                         padding: EdgeInsets.only(
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "Status:${widget.laptopDetails['status']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                         Container(
                         padding: EdgeInsets.only(
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "Condition:${widget.laptopDetails['condition']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey, fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                            Container(
                         padding: EdgeInsets.only(
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "Posted:${widget.laptopDetails['posted']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                           Container(
                         padding: EdgeInsets.only(
                             right: 0, left: 0, top: 0, bottom: 8),
                         child: Text(
                           "warranty:${widget.laptopDetails['warranty']}",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300),
                         )),
                   ],
                 ),
@@ -431,7 +433,7 @@ class _LaptoprelatedPageState extends State<LaptoprelatedPage> {
                     Container(
                       child: Text(
                         "Share",
-                        style: TextStyle(fontSize: 15, color: Colors.blue),
+                        style: TextStyle(fontSize: 15, color: Colors.blue,fontWeight: FontWeight.w300),
                       ),
                     )
                   ],

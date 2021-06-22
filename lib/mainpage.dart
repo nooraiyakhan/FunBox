@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:second_project/addresspage.dart';
 import 'package:second_project/cart.dart';
+import 'package:second_project/contact.dart';
 import 'package:second_project/detailsPage.dart';
 import 'package:second_project/favouritepage.dart';
 import 'package:second_project/laptopdetails.dart';
@@ -61,7 +62,10 @@ class _MainpageState extends State<Mainpage> {
           'price': mobileDetails[i]["price"],
           'color': mobileDetails[i]["color"],
           'size': mobileDetails[i]["size"],
-          'camera': mobileDetails[i]["camera"],
+          'front_camera': mobileDetails[i]["front_camera"],
+          'rear_camera': mobileDetails[i]["rear_camera"],
+          'processor': mobileDetails[i]["processor"],
+          'rom': mobileDetails[i]["rom"],
           'ram': mobileDetails[i]["ram"],
           'battery': mobileDetails[i]["battery"],
           'rating': rat,
@@ -99,6 +103,8 @@ class _MainpageState extends State<Mainpage> {
           'rating': rat,
           'status': laptoplistDetails[i]["status"],
           'condition': laptoplistDetails[i]["condition"],
+          'processor': laptoplistDetails[i]["processor"],
+          'battery': laptoplistDetails[i]["battery"],
           'posted': laptoplistDetails[i]["posted"],
           'warranty': laptoplistDetails[i]["warranty"],
         },
@@ -129,6 +135,7 @@ class _MainpageState extends State<Mainpage> {
               ["water_resistant_depth"],
           'class_type': wristwatchDetails[i]["class_type"],
           'band_width': wristwatchDetails[i]["band_width"],
+          'battery_backup': wristwatchDetails[i]["battery_backup"],
           'rating': rat,
           'status': wristwatchDetails[i]["status"],
           'condition': wristwatchDetails[i]["condition"],
@@ -171,7 +178,7 @@ class _MainpageState extends State<Mainpage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    "Shop",
+                                    "Fun",
                                     style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.blue,
@@ -180,7 +187,7 @@ class _MainpageState extends State<Mainpage> {
                                   //SizedBox(width:5),
 
                                   Text(
-                                    "ify",
+                                    "Box",
                                     style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.black,
@@ -231,13 +238,13 @@ class _MainpageState extends State<Mainpage> {
                                     color: Color(0xff003A5B).withOpacity(0.6),
                                     fontSize: 15,
                                     fontFamily: 'quicksand',
-                                    fontWeight: FontWeight.w500),
+                                    fontWeight: FontWeight.w300),
                                 decoration: InputDecoration(
                                   hintText: "Search...",
                                   hintStyle: TextStyle(
-                                      color: Colors.grey,
+                                      color: Colors.grey[700],
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w500),
+                                      fontWeight: FontWeight.w300),
                                   // labelStyle: TextStyle(
                                   //     color: Color(0xff003A5B),
                                   //     fontSize: 15,
@@ -271,7 +278,7 @@ class _MainpageState extends State<Mainpage> {
                             child: new TabBar(
                               isScrollable: false,
                               labelStyle: TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w300,
                                 color: Colors.blue,
                               ),
                               tabs: [
@@ -291,7 +298,7 @@ class _MainpageState extends State<Mainpage> {
                               indicatorColor: Colors.blue,
                               unselectedLabelColor: Color(0xff354D5B),
                               unselectedLabelStyle: TextStyle(
-                                  fontWeight: FontWeight.w500, fontSize: 14),
+                                  fontWeight: FontWeight.w300, fontSize: 14),
                               indicator: UnderlineTabIndicator(
                                   borderSide: BorderSide(
                                       width: 1.5, color: Colors.blue),
@@ -351,7 +358,7 @@ class _MainpageState extends State<Mainpage> {
                                                       color: Colors.grey,
                                                       fontSize: 15,
                                                       fontWeight:
-                                                          FontWeight.normal),
+                                                          FontWeight.w300),
                                                 ),
                                                 Icon(Icons.arrow_drop_down)
                                               ],
@@ -393,7 +400,7 @@ class _MainpageState extends State<Mainpage> {
                                                               fontSize: 15,
                                                               fontWeight:
                                                                   FontWeight
-                                                                      .normal),
+                                                                      .w300),
                                                         ),
                                                       ),
                                                     );
@@ -504,6 +511,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.white,
+                                                                                fontWeight: FontWeight.w300,
                                                                             fontSize: 10)))
                                                               ],
                                                             ),
@@ -519,14 +527,15 @@ class _MainpageState extends State<Mainpage> {
                                                                         left:
                                                                             15),
                                                                 child: Text(
-                                                                  "Price - ${itemList[index]['price']}/-",
+                                                                  "Price - ${itemList[index]['price']}",
                                                                   style: TextStyle(
                                                                       color: Colors
                                                                           .grey,
                                                                       fontSize:
-                                                                          12),
+                                                                          12,
+                                                                          fontWeight: FontWeight.w300),
                                                                 )),
-                                                            Container(
+                                                                Container(
                                                                 padding: EdgeInsets
                                                                     .only(
                                                                         right:
@@ -550,6 +559,7 @@ class _MainpageState extends State<Mainpage> {
                                                                       style: TextStyle(
                                                                           color: Colors.grey.withOpacity(
                                                                               0.7),
+                                                                              fontWeight: FontWeight.w300,
                                                                           fontSize:
                                                                               12),
                                                                     ),
@@ -562,7 +572,7 @@ class _MainpageState extends State<Mainpage> {
                                                                               12),
                                                                     ),
                                                                     Text(
-                                                                      "${itemList[index]['camera']}",
+                                                                      "${itemList[index]['front_camera']}",
                                                                       maxLines:
                                                                           1,
                                                                       overflow:
@@ -572,7 +582,102 @@ class _MainpageState extends State<Mainpage> {
                                                                           color: Colors.grey.withOpacity(
                                                                               0.7),
                                                                           fontSize:
+                                                                              12,fontWeight: FontWeight.w300),
+                                                                    ),
+                                                                    Text(
+                                                                      " | ",
+                                                                      style: TextStyle(
+                                                                          color: Colors
+                                                                              .blue,
+                                                                          fontSize:
                                                                               12),
+                                                                    ),
+                                                                    Text(
+                                                                      "${itemList[index]['rear_camera']}",
+                                                                      maxLines:
+                                                                          1,
+                                                                      overflow:
+                                                                          TextOverflow
+                                                                              .ellipsis,
+                                                                      style: TextStyle(
+                                                                          color: Colors.grey.withOpacity(
+                                                                              0.7),
+                                                                          fontSize:
+                                                                              12,fontWeight: FontWeight.w300),
+                                                                    ),
+                                                                    Center(
+                                                                      child:
+                                                                          Text(
+                                                                        " | ",
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                Colors.blue,
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        "${itemList[index]['processor']}",
+                                                                        maxLines:
+                                                                            1,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                Colors.grey.withOpacity(0.7),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                )),
+                                                            Container(
+                                                                padding: EdgeInsets
+                                                                    .only(
+                                                                        right:
+                                                                            0,
+                                                                        top:
+                                                                            10),
+                                                                margin: EdgeInsets
+                                                                    .only(
+                                                                        left:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: <
+                                                                      Widget>[
+                                                                    Text(
+                                                                      "${itemList[index]['rom']}",
+                                                                      maxLines:
+                                                                          1,
+                                                                      overflow:
+                                                                          TextOverflow
+                                                                              .ellipsis,
+                                                                      style: TextStyle(
+                                                                          color: Colors.grey.withOpacity(
+                                                                              0.7),
+                                                                          fontSize:
+                                                                              12,fontWeight: FontWeight.w300),
+                                                                    ),
+                                                                    Text(
+                                                                      " | ",
+                                                                      style: TextStyle(
+                                                                          color: Colors
+                                                                              .blue,
+                                                                          fontSize:
+                                                                              12,fontWeight: FontWeight.w300),
+                                                                    ),
+                                                                    Text(
+                                                                      "${itemList[index]['color']}",
+                                                                      maxLines:
+                                                                          1,
+                                                                      overflow:
+                                                                          TextOverflow
+                                                                              .ellipsis,
+                                                                      style: TextStyle(
+                                                                          color: Colors.grey.withOpacity(
+                                                                              0.7),
+                                                                          fontSize:
+                                                                              12,fontWeight: FontWeight.w300),
                                                                     ),
                                                                     Text(
                                                                       " | ",
@@ -593,7 +698,7 @@ class _MainpageState extends State<Mainpage> {
                                                                           color: Colors.grey.withOpacity(
                                                                               0.7),
                                                                           fontSize:
-                                                                              12),
+                                                                              12,fontWeight: FontWeight.w300),
                                                                     ),
                                                                     Center(
                                                                       child:
@@ -616,7 +721,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.grey.withOpacity(0.7),
-                                                                            fontSize: 12),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -761,7 +866,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         decoration: BoxDecoration(
                                                                             color: itemList[index]['status'] == 'Used'
                                                                                 ? Colors
-                                                                                    .grey
+                                                                                    .grey[700]
                                                                                 : Colors
                                                                                     .blue,
                                                                             borderRadius: BorderRadiusDirectional.circular(
@@ -769,7 +874,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         child: Text(
                                                                             "${itemList[index]['status']}",
                                                                             style:
-                                                                                TextStyle(color: Colors.white, fontSize: 10)))
+                                                                                TextStyle(color: Colors.white, fontSize: 10,fontWeight: FontWeight.w300)))
                                                                   ],
                                                                 ),
                                                                 Container(
@@ -783,12 +888,12 @@ class _MainpageState extends State<Mainpage> {
                                                                             left:
                                                                                 15),
                                                                     child: Text(
-                                                                      "Price - ${itemList[index]['price']}/-",
+                                                                      "Price - ${itemList[index]['price']}",
                                                                       style: TextStyle(
                                                                           color: Colors
                                                                               .grey,
                                                                           fontSize:
-                                                                              12),
+                                                                              12,fontWeight: FontWeight.w300),
                                                                     )),
                                                                 Container(
                                                                     padding: EdgeInsets.only(
@@ -811,7 +916,7 @@ class _MainpageState extends State<Mainpage> {
                                                                               TextOverflow.ellipsis,
                                                                           style: TextStyle(
                                                                               color: Colors.grey.withOpacity(0.7),
-                                                                              fontSize: 12),
+                                                                              fontSize: 12,fontWeight: FontWeight.w300),
                                                                         ),
                                                                         Text(
                                                                           " | ",
@@ -827,13 +932,13 @@ class _MainpageState extends State<Mainpage> {
                                                                               TextOverflow.ellipsis,
                                                                           style: TextStyle(
                                                                               color: Colors.grey.withOpacity(0.7),
-                                                                              fontSize: 12),
+                                                                              fontSize: 12,fontWeight: FontWeight.w300),
                                                                         ),
                                                                         Text(
                                                                           " | ",
                                                                           style: TextStyle(
                                                                               color: Colors.blue,
-                                                                              fontSize: 12),
+                                                                              fontSize: 12,fontWeight: FontWeight.w300),
                                                                         ),
                                                                         Text(
                                                                           "${itemList[index]['ram']}",
@@ -843,7 +948,7 @@ class _MainpageState extends State<Mainpage> {
                                                                               TextOverflow.ellipsis,
                                                                           style: TextStyle(
                                                                               color: Colors.grey.withOpacity(0.7),
-                                                                              fontSize: 12),
+                                                                              fontSize: 12,fontWeight: FontWeight.w300),
                                                                         ),
                                                                         Center(
                                                                           child:
@@ -862,7 +967,7 @@ class _MainpageState extends State<Mainpage> {
                                                                             overflow:
                                                                                 TextOverflow.ellipsis,
                                                                             style:
-                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12),
+                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12,fontWeight: FontWeight.w300),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -957,7 +1062,7 @@ class _MainpageState extends State<Mainpage> {
                                                       color: Colors.grey,
                                                       fontSize: 15,
                                                       fontWeight:
-                                                          FontWeight.normal),
+                                                          FontWeight.w300),
                                                 ),
                                                 Icon(Icons.arrow_drop_down)
                                               ],
@@ -1000,7 +1105,7 @@ class _MainpageState extends State<Mainpage> {
                                                               fontSize: 15,
                                                               fontWeight:
                                                                   FontWeight
-                                                                      .normal),
+                                                                      .w300),
                                                         ),
                                                       ),
                                                     );
@@ -1113,7 +1218,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.white,
-                                                                            fontSize: 10)))
+                                                                            fontSize: 10,fontWeight: FontWeight.w300)))
                                                               ],
                                                             ),
                                                             Container(
@@ -1133,7 +1238,7 @@ class _MainpageState extends State<Mainpage> {
                                                                       color: Colors
                                                                           .grey,
                                                                       fontSize:
-                                                                          12),
+                                                                          12,fontWeight: FontWeight.w300),
                                                                 )),
                                                             Container(
                                                                 padding: EdgeInsets
@@ -1160,7 +1265,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.grey.withOpacity(0.7),
-                                                                            fontSize: 12),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
                                                                       ),
                                                                     ),
                                                                     Text(
@@ -1182,7 +1287,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.grey.withOpacity(0.7),
-                                                                            fontSize: 12),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
                                                                       ),
                                                                     ),
                                                                     Text(
@@ -1204,7 +1309,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.grey.withOpacity(0.7),
-                                                                            fontSize: 12),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
                                                                       ),
                                                                     ),
                                                                     Center(
@@ -1214,7 +1319,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.blue,
-                                                                            fontSize: 12),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
                                                                       ),
                                                                     ),
                                                                     Expanded(
@@ -1228,9 +1333,62 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.grey.withOpacity(0.7),
-                                                                            fontSize: 12),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
                                                                       ),
                                                                     ),
+                                                                  ],
+                                                                )),
+                                                                   Container(
+                                                                padding: EdgeInsets
+                                                                    .only(
+                                                                        right:
+                                                                            0,
+                                                                        top:
+                                                                            10),
+                                                                margin: EdgeInsets
+                                                                    .only(
+                                                                        left:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: <
+                                                                      Widget>[
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        "${laptopitemList[index]['processor']}",
+                                                                        maxLines:
+                                                                            1,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                Colors.grey.withOpacity(0.7),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
+                                                                      ),
+                                                                    ),
+                                                                    Text(
+                                                                      " | ",
+                                                                      style: TextStyle(
+                                                                          color: Colors
+                                                                              .blue,
+                                                                          fontSize:
+                                                                              12),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        "${laptopitemList[index]['battery']}",
+                                                                        maxLines:
+                                                                            1,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                Colors.grey.withOpacity(0.7),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
+                                                                      ),
+                                                                    ),
+                                                                  
                                                                   ],
                                                                 )),
                                                             Container(
@@ -1382,7 +1540,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         child: Text(
                                                                             "${laptopitemList[index]['status']}",
                                                                             style:
-                                                                                TextStyle(color: Colors.white, fontSize: 10)))
+                                                                                TextStyle(color: Colors.white, fontSize: 10,fontWeight: FontWeight.w300)))
                                                                   ],
                                                                 ),
                                                                 Container(
@@ -1401,7 +1559,7 @@ class _MainpageState extends State<Mainpage> {
                                                                           color: Colors
                                                                               .grey,
                                                                           fontSize:
-                                                                              12),
+                                                                              12,fontWeight: FontWeight.w300),
                                                                     )),
                                                                 Container(
                                                                     padding: EdgeInsets.only(
@@ -1425,7 +1583,7 @@ class _MainpageState extends State<Mainpage> {
                                                                             overflow:
                                                                                 TextOverflow.ellipsis,
                                                                             style:
-                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12),
+                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12,fontWeight: FontWeight.w300),
                                                                           ),
                                                                         ),
                                                                         Text(
@@ -1443,7 +1601,7 @@ class _MainpageState extends State<Mainpage> {
                                                                             overflow:
                                                                                 TextOverflow.ellipsis,
                                                                             style:
-                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12),
+                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12,fontWeight: FontWeight.w300),
                                                                           ),
                                                                         ),
                                                                         Text(
@@ -1461,7 +1619,7 @@ class _MainpageState extends State<Mainpage> {
                                                                             overflow:
                                                                                 TextOverflow.ellipsis,
                                                                             style:
-                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12),
+                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12,fontWeight: FontWeight.w300),
                                                                           ),
                                                                         ),
                                                                         Center(
@@ -1481,11 +1639,65 @@ class _MainpageState extends State<Mainpage> {
                                                                             overflow:
                                                                                 TextOverflow.ellipsis,
                                                                             style:
-                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12),
+                                                                                TextStyle(color: Colors.grey.withOpacity(0.7), fontSize: 12,fontWeight: FontWeight.w300),
                                                                           ),
                                                                         ),
+                                                                        
                                                                       ],
                                                                     )),
+                                                                     Container(
+                                                                padding: EdgeInsets
+                                                                    .only(
+                                                                        right:
+                                                                            0,
+                                                                        top:
+                                                                            10),
+                                                                margin: EdgeInsets
+                                                                    .only(
+                                                                        left:
+                                                                            15),
+                                                                child: Row(
+                                                                  children: <
+                                                                      Widget>[
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        "${laptopitemList[index]['processor']}",
+                                                                        maxLines:
+                                                                            1,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                Colors.grey.withOpacity(0.7),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
+                                                                      ),
+                                                                    ),
+                                                                    Text(
+                                                                      " | ",
+                                                                      style: TextStyle(
+                                                                          color: Colors
+                                                                              .blue,
+                                                                          fontSize:
+                                                                              12),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Text(
+                                                                        "${laptopitemList[index]['battery']}",
+                                                                        maxLines:
+                                                                            1,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        style: TextStyle(
+                                                                            color:
+                                                                                Colors.grey.withOpacity(0.7),
+                                                                            fontSize: 12,fontWeight: FontWeight.w300),
+                                                                      ),
+                                                                    ),
+                                                                  
+                                                                  ],
+                                                                )),
                                                                 Container(
                                                                     margin: EdgeInsets.only(
                                                                         top: 5,
@@ -1575,7 +1787,7 @@ class _MainpageState extends State<Mainpage> {
                                                     color: Colors.grey,
                                                     fontSize: 15,
                                                     fontWeight:
-                                                        FontWeight.normal,
+                                                        FontWeight.w300,
                                                   ),
                                                 ),
                                                 Icon(Icons.arrow_drop_down)
@@ -1722,6 +1934,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.white,
+                                                                                fontWeight: FontWeight.w300,
                                                                             fontSize: 10),
                                                                       ),
                                                                     ),
@@ -1739,10 +1952,11 @@ class _MainpageState extends State<Mainpage> {
                                                                           left:
                                                                               15),
                                                                   child: Text(
-                                                                    "price - ${wristwatchList[index]['price']}/-",
+                                                                    "Price - ${wristwatchList[index]['price']}",
                                                                     style: TextStyle(
                                                                         color: Colors
                                                                             .grey,
+                                                                            fontWeight: FontWeight.w300,
                                                                         fontSize:
                                                                             12),
                                                                   ),
@@ -1768,7 +1982,7 @@ class _MainpageState extends State<Mainpage> {
                                                                               maxLines: 1,
                                                                               overflow: TextOverflow.ellipsis,
                                                                               style: TextStyle(
-                                                                                color: Colors.grey.withOpacity(0.7),
+                                                                                color: Colors.grey.withOpacity(0.7),fontWeight: FontWeight.w300,
                                                                                 fontSize: 12,
                                                                               ),
                                                                             ),
@@ -1788,7 +2002,7 @@ class _MainpageState extends State<Mainpage> {
                                                                               maxLines: 1,
                                                                               overflow: TextOverflow.ellipsis,
                                                                               style: TextStyle(
-                                                                                color: Colors.grey.withOpacity(0.7),
+                                                                                color: Colors.grey.withOpacity(0.7),fontWeight: FontWeight.w300,
                                                                                 fontSize: 12,
                                                                               ),
                                                                             ),
@@ -1805,7 +2019,7 @@ class _MainpageState extends State<Mainpage> {
                                                                               maxLines: 1,
                                                                               overflow: TextOverflow.ellipsis,
                                                                               style: TextStyle(
-                                                                                color: Colors.grey.withOpacity(0.7),
+                                                                                color: Colors.grey.withOpacity(0.7),fontWeight: FontWeight.w300,
                                                                                 fontSize: 12,
                                                                               ),
                                                                             ),
@@ -1823,6 +2037,7 @@ class _MainpageState extends State<Mainpage> {
                                                                               overflow: TextOverflow.ellipsis,
                                                                               style: TextStyle(
                                                                                 color: Colors.grey.withOpacity(0.7),
+                                                                                fontWeight: FontWeight.w300,
                                                                                 fontSize: 12,
                                                                               ),
                                                                             ),
@@ -1964,7 +2179,7 @@ class _MainpageState extends State<Mainpage> {
                                                                               Text(
                                                                             "${wristwatchList[index]['status']}",
                                                                             style:
-                                                                                TextStyle(color: Colors.white, fontSize: 10),
+                                                                                TextStyle(color: Colors.white, fontSize: 10,fontWeight: FontWeight.w300),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -1986,6 +2201,7 @@ class _MainpageState extends State<Mainpage> {
                                                                         style: TextStyle(
                                                                             color:
                                                                                 Colors.grey,
+                                                                                fontWeight: FontWeight.w300,
                                                                             fontSize: 12),
                                                                       ),
                                                                     ),
@@ -2010,7 +2226,7 @@ class _MainpageState extends State<Mainpage> {
                                                                                   overflow: TextOverflow.ellipsis,
                                                                                   style: TextStyle(
                                                                                     color: Colors.grey.withOpacity(0.7),
-                                                                                    fontSize: 12,
+                                                                                    fontSize: 12,fontWeight: FontWeight.w300,
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -2027,7 +2243,7 @@ class _MainpageState extends State<Mainpage> {
                                                                                   maxLines: 1,
                                                                                   overflow: TextOverflow.ellipsis,
                                                                                   style: TextStyle(
-                                                                                    color: Colors.grey.withOpacity(0.7),
+                                                                                    color: Colors.grey.withOpacity(0.7),fontWeight: FontWeight.w300,
                                                                                     fontSize: 12,
                                                                                   ),
                                                                                 ),
@@ -2043,7 +2259,7 @@ class _MainpageState extends State<Mainpage> {
                                                                                   overflow: TextOverflow.ellipsis,
                                                                                   style: TextStyle(
                                                                                     color: Colors.grey.withOpacity(0.7),
-                                                                                    fontSize: 12,
+                                                                                    fontSize: 12,fontWeight: FontWeight.w300
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -2058,7 +2274,22 @@ class _MainpageState extends State<Mainpage> {
                                                                                   overflow: TextOverflow.ellipsis,
                                                                                   style: TextStyle(
                                                                                     color: Colors.grey.withOpacity(0.7),
-                                                                                    fontSize: 12,
+                                                                                    fontSize: 12,fontWeight: FontWeight.w300
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                                Text(
+                                                                                "|",
+                                                                                style: TextStyle(color: Colors.blue, fontSize: 12),
+                                                                              ),
+                                                                              Expanded(
+                                                                                child: Text(
+                                                                                  "${wristwatchList[index]['battery_backup']}",
+                                                                                  maxLines: 1,
+                                                                                  overflow: TextOverflow.ellipsis,
+                                                                                  style: TextStyle(
+                                                                                    color: Colors.grey.withOpacity(0.7),
+                                                                                    fontSize: 12,fontWeight: FontWeight.w300
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -2153,14 +2384,14 @@ class _MainpageState extends State<Mainpage> {
                                     child: Text(
                                       "Hello,",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 15),
+                                          color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                                     ),
                                   ),
                                   Container(
                                     child: Text(
                                       "Nooraiya khan",
                                       style: TextStyle(
-                                          fontSize: 18, color: Colors.black),
+                                          fontSize: 18, color: Colors.black,fontWeight: FontWeight.w300),
                                     ),
                                   ),
                                 ],
@@ -2226,7 +2457,7 @@ class _MainpageState extends State<Mainpage> {
                               Text(
                                 "Profile",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -2262,7 +2493,7 @@ class _MainpageState extends State<Mainpage> {
                                     Text(
                                       "Cart",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -2270,7 +2501,7 @@ class _MainpageState extends State<Mainpage> {
                               Text(
                                 "4",
                                 style:
-                                    TextStyle(color: Colors.blue, fontSize: 14),
+                                    TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -2305,7 +2536,7 @@ class _MainpageState extends State<Mainpage> {
                                     Text(
                                       "Orders",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -2313,7 +2544,7 @@ class _MainpageState extends State<Mainpage> {
                               Text(
                                 "4",
                                 style:
-                                    TextStyle(color: Colors.blue, fontSize: 14),
+                                    TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -2343,7 +2574,7 @@ class _MainpageState extends State<Mainpage> {
                               Text(
                                 "Address",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               )
                             ],
                           )),
@@ -2377,7 +2608,7 @@ class _MainpageState extends State<Mainpage> {
                                     Text(
                                       "Vouchers",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -2387,7 +2618,7 @@ class _MainpageState extends State<Mainpage> {
                                     ),
                                     child: Text(
                                       "4",
-                                      style: TextStyle(color: Colors.blue),
+                                      style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300),
                                     ))
                               ])),
                     ),
@@ -2422,7 +2653,7 @@ class _MainpageState extends State<Mainpage> {
                                     Text(
                                       "Favourite",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -2436,13 +2667,14 @@ class _MainpageState extends State<Mainpage> {
                           )),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 20,
                     ),
                     Divider(
                       height: 2,
                     ),
-                    SizedBox(
-                      height: 15,
+                    
+                  SizedBox(
+                      height: 20,
                     ),
                     GestureDetector(
                       onTap: () {
@@ -2466,7 +2698,34 @@ class _MainpageState extends State<Mainpage> {
                               Text(
                                 "Terms and Conditions",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          )),
+                    ),
+                             SizedBox(
+                      height: 30,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact()));
+                      },
+                      child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.phone,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Contact Us",
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               ),
                             ],
                           )),
@@ -2486,7 +2745,7 @@ class _MainpageState extends State<Mainpage> {
                                       child: Text(
                                         "Do you want to Log Out?",
                                         style: TextStyle(
-                                            color: Colors.grey, fontSize: 15),
+                                            color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                                       ),
                                     ),
                                     SizedBox(
@@ -2519,7 +2778,7 @@ class _MainpageState extends State<Mainpage> {
                                                 "Yes",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 15),
+                                                    fontSize: 15,fontWeight: FontWeight.w300),
                                               ),
                                             ),
                                           ),
@@ -2544,6 +2803,7 @@ class _MainpageState extends State<Mainpage> {
                                                 "No",
                                                 style: TextStyle(
                                                     color: Colors.white,
+                                                    fontWeight: FontWeight.w300,
                                                     fontSize: 15),
                                               ),
                                             ),
@@ -2569,7 +2829,7 @@ class _MainpageState extends State<Mainpage> {
                               Text(
                                 "Logout",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                               ),
                             ],
                           )),

@@ -56,9 +56,9 @@ class _PassverState extends State<Passver> {
                   border: InputBorder.none,
                   hintText: "Type Your Verification Code... ",
                   
-                  hintStyle:TextStyle(color: Colors.grey,fontSize: 15),
+                  hintStyle:TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300),
                   labelText: "Enter Your Verification Code",
-                  labelStyle: TextStyle(color: Colors.blue)
+                  labelStyle: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300)
 
 
                   ),
@@ -73,7 +73,7 @@ class _PassverState extends State<Passver> {
                   children: [
                     Icon(Icons.error_outline,color: Colors.redAccent,size: 17,),
                     SizedBox(width: 5,),
-                    Text("Code Field Is Empty",style: TextStyle(color: Colors.redAccent),)
+                    Text("Code field is empty!",style: TextStyle(color: Colors.redAccent),)
                   ],
                 ),
               ):Container(),
@@ -113,13 +113,13 @@ class _PassverState extends State<Passver> {
                                                     "Next",
                                                     style: TextStyle(
                                                         color: Colors.white,
-                                                        fontSize: 16),
+                                                        fontSize: 16,fontWeight: FontWeight.w300),
                                                   ),
                                                   
                                                 ),
                                                 SizedBox(width: 3,),
                                                 Container(
-                                                  child: Icon(Icons.arrow_forward,color: Colors.white,size: 16,),
+                                                  child: Icon(Icons.arrow_forward_ios,color: Colors.white,size: 16,),
                                                 )    ], ),), ),)    ],
             
           ),

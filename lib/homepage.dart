@@ -58,7 +58,7 @@ class _HomepageState extends State<Homepage> {
                             "${welcomeItem[index]['title']}",
                             style: TextStyle(
                                 fontSize: 17,
-                                fontWeight: FontWeight.normal,
+                                fontWeight: FontWeight.w300,
                                 color: Colors.black),
                           ),
                         ),
@@ -69,7 +69,7 @@ class _HomepageState extends State<Homepage> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 13,
-                                fontWeight: FontWeight.normal,
+                                fontWeight: FontWeight.w300,
                                 color: Colors.black54),
                           ),
                         ),
@@ -99,7 +99,8 @@ class _HomepageState extends State<Homepage> {
                                           "Skip",
                                           style: TextStyle(
                                             fontSize: 18,
-                                            color: Colors.grey,
+                                            color: Colors.grey[700],
+                                            fontWeight: FontWeight.w300
                                           ),
                                         ),
                                       ),
@@ -115,7 +116,7 @@ class _HomepageState extends State<Homepage> {
                                           decoration: BoxDecoration(
                                               color: index == 0
                                                   ? Colors.blue
-                                                  : Colors.grey[300],
+                                                  : Colors.grey,
                                               borderRadius:
                                                   BorderRadius.circular(5)),
                                         ),
@@ -126,7 +127,7 @@ class _HomepageState extends State<Homepage> {
                                           decoration: BoxDecoration(
                                               color: index == 1
                                                   ? Colors.blue
-                                                  : Colors.grey[300],
+                                                  : Colors.grey,
                                               borderRadius:
                                                   BorderRadius.circular(5)),
                                         ),
@@ -136,7 +137,7 @@ class _HomepageState extends State<Homepage> {
                                           decoration: BoxDecoration(
                                               color: index == 2
                                                   ? Colors.blue
-                                                  : Colors.grey[300],
+                                                  : Colors.grey,
                                               borderRadius:
                                                   BorderRadius.circular(5)),
                                         )
@@ -174,6 +175,7 @@ class _HomepageState extends State<Homepage> {
                                         : "Get Started >",
                                     style: TextStyle(
                                       fontSize: 18,
+                                      fontWeight: FontWeight.w300,
                                       color: index == 2
                                           ? Colors.white
                                           : Colors.blue,

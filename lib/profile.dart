@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:second_project/addresspage.dart';
 import 'package:second_project/cart.dart';
+import 'package:second_project/contact.dart';
 import 'package:second_project/editprofile.dart';
 import 'package:second_project/favouritepage.dart';
 import 'package:second_project/homepage.dart';
@@ -12,12 +13,23 @@ import 'package:second_project/terms.dart';
 import 'package:second_project/voucherpage.dart';
 import 'package:http/http.dart' as http;
 import 'main.dart';
+import 'dart:io';
+//import 'package:image_picker/image_picker.dart';
 class ProfilePage extends StatefulWidget {
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  var _image;
+
+  // Future getImage() async{
+  // final image=await ImagePicker.platform.pickImage(source: ImageSource.gallery);
+  // setState(() {
+  //   _image = image;
+  // });
+  // }
+
    var profileDetails;
   int index=0;
   void initState(){
@@ -57,9 +69,9 @@ class _ProfilePageState extends State<ProfilePage> {
           title: Text(
             "Profile",
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[700],
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w300),
           ),
           actions: [
             IconButton(
@@ -111,14 +123,14 @@ class _ProfilePageState extends State<ProfilePage> {
                                   child: Text(
                                     "Hello,",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
+                                        color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                                 Container(
                                   child: Text(
                                     "Nooraiya khan",
                                     style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
+                                        fontSize: 18, color: Colors.black,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                               ],
@@ -157,7 +169,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   child: Text(
                                     "Home",
                                     style:
-                                        TextStyle(color: Colors.grey, fontSize: 13),
+                                        TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                         
                                   ),
                                 ),
@@ -169,33 +181,44 @@ class _ProfilePageState extends State<ProfilePage> {
                   // SizedBox(
                   //   height: 30,
                   // ),
+          SizedBox(
+                    height: 20,
+                  ),
+
                   GestureDetector(
                     onTap: () {
                       Navigator.pop(context);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ProfilePage()));
                     },
                     child: Container(
                         padding: EdgeInsets.all(15),
-                       // margin: EdgeInsets.only(right: 15),
-                        
-                            //borderRadius: BorderRadius.only(
-                               // topRight: Radius.circular(25),
-                               // bottomRight: Radius.circular(25))),
-                        //padding: EdgeInsets.only(left: 15),
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.1),
+                        ),
                         child: Row(
-                          children: <Widget>[
-                            Icon(
-                              Icons.person,
-                              color: Colors.blue,
-                              size: 16,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              child: Row(
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.person,
+                                    color: Colors.blue,
+                                    size: 18,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    "Profile",
+                                    style: TextStyle(
+                                        color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
+                                  )
+                                ],
+                              ),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Profile",
-                              style:
-                                  TextStyle(color: Colors.blue, fontSize: 13),
-                            )
+                         
                           ],
                         )),
                   ),
@@ -229,7 +252,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   Text(
                                     "Cart",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 13),
+                                        color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -238,7 +261,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           Text(
                             "4",
                             style: TextStyle(
-                                color: Colors.blue, fontSize: 13),
+                                color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300),
                           )
                         ],
                       )),
@@ -273,7 +296,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   Text(
                                     "Orders",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 13),
+                                        color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -282,7 +305,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           Text(
                             "4",
                             style: TextStyle(
-                                color: Colors.blue, fontSize: 13),
+                                color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300),
                           )
                         ],
                       )),
@@ -310,7 +333,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                             Text(
                               "Address",
-                              style: TextStyle(color: Colors.grey, fontSize: 13),
+                              style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -343,13 +366,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 ),
                                 Text(
                                   "Vouchers",
-                                  style: TextStyle(color: Colors.grey, fontSize: 13),
+                                  style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                 )
                               ],
                             ),
                             Container(
                               padding: EdgeInsets.only(right: 15),
-                              child: Text("4",style: TextStyle(color: Colors.blue),),
+                              child: Text("4",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300),),
                             )
                           ],
                         )),
@@ -386,7 +409,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     Text(
                                       "Favourite",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
+                                          color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                     )
                                   ],
                                 ),
@@ -394,15 +417,15 @@ class _ProfilePageState extends State<ProfilePage> {
                               Text(
                                 "2",
                                 style: TextStyle(
-                                    color: Colors.blue, fontSize: 14), )],)),   ),
+                                    color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300), )],)),   ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Divider(
                     height: 2,
                   ),
                   SizedBox(
-                    height: 15,
+                    height: 20,
                   ),
                   GestureDetector(
                     onTap: (){
@@ -425,11 +448,38 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                             Text(
                               "Terms and Conditions",
-                              style: TextStyle(color: Colors.grey, fontSize: 13),
+                              style: TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
                   ),
+                     SizedBox(
+                      height: 30,
+                    ),
+                    InkWell(
+                      onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact()));
+                      },
+                      child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.phone,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Contact Us",
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          )),
+                    ),
                SizedBox(
                     height: 30,
                   ),
@@ -442,7 +492,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                         Container(
-                          child: Text("Do you want to Log Out?",style: TextStyle(color: Colors.grey,fontSize: 15),),
+                          child: Text("Do you want to Log Out?",style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.w300,),),
                         ),
                         SizedBox(height: 20,),
                         Container(
@@ -463,7 +513,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   decoration: BoxDecoration(
                                     color: Colors.blue,borderRadius: BorderRadius.circular(5)
                                   ),
-                                  child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 15),),
+                                  child: Text("Yes",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w300),),
                                 ),
                               ),
                            
@@ -477,7 +527,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 decoration: BoxDecoration(
                                   color: Colors.blue,borderRadius: BorderRadius.circular(5)
                                 ),
-                                child: Text("No",style: TextStyle(color: Colors.white,fontSize: 15),),
+                                child: Text("No",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w300),),
                               ),
                             ),
                           ],
@@ -501,7 +551,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                             Text(
                               "Logout",
-                              style: TextStyle(color: Colors.grey, fontSize: 14),
+                              style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
@@ -524,7 +574,20 @@ class _ProfilePageState extends State<ProfilePage> {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                           Container(
+                   
+              //   child: Center(
+              //     child:_image==null?Text("Image is not found")
+              //     :Image.file(_image)
+              //   ),
+                
+              // ),
+              // FloatingActionButton(onPressed: getImage,
+              // tooltip : 'Increment',
+              // child: Icon(Icons.camera_alt),
+              // ),
+           
+                         Center(
+                           child: Container(
                 width: 60,
                 height: 60,
                 margin: EdgeInsets.only(top: 20, left: 10, bottom: 20),
@@ -532,6 +595,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     borderRadius: BorderRadius.circular(40),
                     child: Image.asset("assets/profile.jpg")),
               ),
+                         ),
               SizedBox(
                 width: 15,
               ),
@@ -545,7 +609,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         style: TextStyle(
                             color: Colors.grey,
                             fontSize: 12,
-                            fontWeight: FontWeight.normal),
+                            fontWeight: FontWeight.w300),
                       )),
                   Container(
                       child: Text(
@@ -553,7 +617,7 @@ class _ProfilePageState extends State<ProfilePage> {
                        style: TextStyle(
                         color: Colors.black,
                         fontSize: 16,
-                        fontWeight: FontWeight.normal),  )),    ], )] 
+                        fontWeight: FontWeight.w300),  )),    ], )] 
                         
                          ),
          //   Divider();
@@ -591,7 +655,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       margin: EdgeInsets.only(top: 2),
                       child: Text(
                        "${userProfileList[index]['number']}",
-                        style: TextStyle(color: Colors.grey, fontSize: 14),
+                        style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                       ),
                     )
                   ],
@@ -631,7 +695,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       margin: EdgeInsets.only(top: 2),
                       child: Text(
                       "${userProfileList[index]['email']}",
-                        style: TextStyle(color: Colors.grey, fontSize: 14), ), )],) ]), )]);
+                        style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300), ), )],) ]), )]);
               
 
                 })

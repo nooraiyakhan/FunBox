@@ -82,7 +82,7 @@ class _PurchagepageState extends State<Purchagepage> {
           title: Text(
             "Checkout",
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[700],
                 fontSize: 16,
                 fontWeight: FontWeight.normal),
           ),

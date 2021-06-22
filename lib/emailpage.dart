@@ -18,7 +18,7 @@ class _EmailpageState extends State<Emailpage> {
         child: Image.asset("assets/code.jpg"),
           ),
           Container(
-            child: Text("Enter the verification code",style: TextStyle(color: Colors.grey,fontSize: 13),),
+            child: Text("Enter the verification code",style: TextStyle(color: Colors.grey[700],fontSize: 13,fontWeight: FontWeight.w300),),
 
           ),
             Padding(padding: EdgeInsets.all(20)),
@@ -43,7 +43,7 @@ class _EmailpageState extends State<Emailpage> {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "*Verification code",
-                    hintStyle: TextStyle(color: Colors.grey),
+                    hintStyle: TextStyle(color: Colors.grey[700],fontWeight: FontWeight.w300),
                   ),
                 ),
               )

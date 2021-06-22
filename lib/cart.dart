@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:second_project/addresspage.dart';
 import 'package:second_project/cart_purchase.dart';
 import 'package:second_project/cartdetails.dart';
+import 'package:second_project/contact.dart';
 import 'package:second_project/detailsPage.dart';
 import 'package:second_project/loginpage.dart';
 import 'package:second_project/main.dart';
@@ -73,7 +74,7 @@ class _CartpageState extends State<Cartpage> {
         iconTheme: IconThemeData(color: Colors.blue),
         title: Text(
           "Cart",
-          style: TextStyle(color: Colors.grey, fontSize: 17),
+          style: TextStyle(color: Colors.grey[700], fontSize: 16,fontWeight: FontWeight.w300,),
         ),
       ),
       drawer: Drawer(
@@ -108,14 +109,14 @@ class _CartpageState extends State<Cartpage> {
                                   child: Text(
                                     "Hello,",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
+                                        color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                                   ),
-                                ),
+                            ),
                                 Container(
                                   child: Text(
                                     "Nooraiya khan",
                                     style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
+                                        fontSize: 18, color: Colors.black,fontWeight: FontWeight.w300,),
                                   ),
                                 ),
                               ],
@@ -147,7 +148,7 @@ class _CartpageState extends State<Cartpage> {
                             Text(
                               "Home",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                             )
                           ],
                         )),
@@ -178,7 +179,7 @@ class _CartpageState extends State<Cartpage> {
                             Text(
                               "Profile",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                             )
                           ],
                         )),
@@ -215,7 +216,7 @@ class _CartpageState extends State<Cartpage> {
                                   Text(
                                     "Cart",
                                     style: TextStyle(
-                                        color: Colors.blue, fontSize: 14),
+                                        color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300,),
                                   )
                                 ],
                               ),
@@ -223,7 +224,7 @@ class _CartpageState extends State<Cartpage> {
                             Text(
                               "4",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 14),
+                                  TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300,),
                             )
                           ],
                         )),
@@ -256,7 +257,7 @@ class _CartpageState extends State<Cartpage> {
                                 Text(
                                   "Orders",
                                   style: TextStyle(
-                                      color: Colors.grey, fontSize: 14),
+                                      color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                                 )
                               ],
                             ),
@@ -264,7 +265,7 @@ class _CartpageState extends State<Cartpage> {
                               padding: EdgeInsets.only(right: 15),
                               child: Text(
                                 "4",
-                                style: TextStyle(color: Colors.blue),
+                                style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300,),
                               ),
                             )
                           ],
@@ -295,7 +296,7 @@ class _CartpageState extends State<Cartpage> {
                             Text(
                               "Address",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                             )
                           ],
                         )),
@@ -329,7 +330,7 @@ class _CartpageState extends State<Cartpage> {
                                 Text(
                                   "Vouchers",
                                   style: TextStyle(
-                                      color: Colors.grey, fontSize: 14),
+                                      color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                                 )
                               ],
                             ),
@@ -337,7 +338,7 @@ class _CartpageState extends State<Cartpage> {
                               padding: EdgeInsets.only(right: 15),
                               child: Text(
                                 "4",
-                                style: TextStyle(color: Colors.blue),
+                                style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300,),
                               ),
                             )
                           ],
@@ -374,7 +375,7 @@ class _CartpageState extends State<Cartpage> {
                                   Text(
                                     "Favourite",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 14),
+                                        color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                                   )
                                 ],
                               ),
@@ -382,17 +383,21 @@ class _CartpageState extends State<Cartpage> {
                             Text(
                               "2",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 14),
+                                  TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300,),
                             )
                           ],
                         )),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Divider(
                     height: 2,
                   ),
+                  SizedBox(
+                      height: 20,
+                    ),
+     
                   SizedBox(
                     height: 15,
                   ),
@@ -416,11 +421,38 @@ class _CartpageState extends State<Cartpage> {
                             Text(
                               "Terms and Conditions",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                             ),
                           ],
                         )),
                   ),
+                   SizedBox(
+                      height: 30,
+                    ),
+                    InkWell(
+                      onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact()));
+                      },
+                      child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.phone,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Contact Us",
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
+                              ),
+                            ],
+                          )),
+                    ),
                   SizedBox(
                     height: 30,
                   ),
@@ -436,7 +468,7 @@ class _CartpageState extends State<Cartpage> {
                                     child: Text(
                                       "Do you want to Log Out?",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 15),
+                                          color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                                     ),
                                   ),
                                   SizedBox(
@@ -469,7 +501,7 @@ class _CartpageState extends State<Cartpage> {
                                               "Yes",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 15),
+                                                  fontSize: 15,fontWeight: FontWeight.w300,),
                                             ),
                                           ),
                                         ),
@@ -494,7 +526,7 @@ class _CartpageState extends State<Cartpage> {
                                               "No",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 15),
+                                                  fontSize: 15,fontWeight: FontWeight.w300,),
                                             ),
                                           ),
                                         ),
@@ -519,7 +551,7 @@ class _CartpageState extends State<Cartpage> {
                             Text(
                               "Logout",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                             ),
                           ],
                         )),
@@ -533,7 +565,7 @@ class _CartpageState extends State<Cartpage> {
       body: SafeArea(
           child: userCartList.length == 0
               ? Center(
-                  child: Text("No items available"),
+                  child: Text("No items available",style: TextStyle(fontWeight: FontWeight.w300,),),
                 )
               : SingleChildScrollView(
                   physics: BouncingScrollPhysics(),
@@ -548,7 +580,7 @@ class _CartpageState extends State<Cartpage> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             border:
-                                Border.all(color: Colors.grey.withOpacity(0.1)),
+                                Border.all(color: Colors.grey[700].withOpacity(0.1)),
                             borderRadius: BorderRadius.circular(5)),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -572,10 +604,12 @@ class _CartpageState extends State<Cartpage> {
                                             margin: EdgeInsets.only(left: 15),
                                             child: Text(
                                               "${userCartList[index]['name']}",
+                                              
                                               maxLines: 2,
+                                              
                                               overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
-                                                  color: Colors.grey,
+                                                  color: Colors.grey[700],
                                                   fontSize: 15,
                                                   fontWeight: FontWeight.bold),
                                             ),
@@ -587,7 +621,7 @@ class _CartpageState extends State<Cartpage> {
                                                 color: userCartList[index]
                                                             ['status'] ==
                                                         'Used'
-                                                    ? Colors.grey
+                                                    ? Colors.grey[700]
                                                     : Colors.blue,
                                                 borderRadius:
                                                     BorderRadiusDirectional
@@ -596,8 +630,9 @@ class _CartpageState extends State<Cartpage> {
                                                 "${userCartList[index]['status']}",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 10)))
-                                      ],
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.w300,))
+                                          )  ],
                                     ),
                                     Container(
                                         padding:
@@ -606,7 +641,7 @@ class _CartpageState extends State<Cartpage> {
                                         child: Text(
                                           "Price - ${userCartList[index]['price']}",
                                           style: TextStyle(
-                                              color: Colors.grey, fontSize: 12),
+                                              color: Colors.grey[700], fontSize: 12,fontWeight: FontWeight.w300,),
                                         )),
                                     Container(
                                       margin: EdgeInsets.only(top: 5, left: 8),
@@ -648,7 +683,7 @@ class _CartpageState extends State<Cartpage> {
                                                 Container(
                                                   padding: EdgeInsets.all(10),
                                                   decoration: BoxDecoration(
-                                                      color: Colors.grey
+                                                      color: Colors.grey[700]
                                                           .withOpacity(0.1),
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -659,8 +694,8 @@ class _CartpageState extends State<Cartpage> {
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                     style: TextStyle(
-                                                        color: Colors.grey
-                                                            .withOpacity(0.9),
+                                                        color: Colors.grey[700]
+                                                            .withOpacity(0.9),fontWeight: FontWeight.w300,
                                                         fontSize: 10),
                                                   ),
                                                 ),
@@ -731,7 +766,7 @@ class _CartpageState extends State<Cartpage> {
                 "",
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: Colors.white, fontSize: 14),
+                style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.w300,),
               ),
             ),
             GestureDetector(
@@ -753,7 +788,7 @@ class _CartpageState extends State<Cartpage> {
                           "Purchase",
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(color: Colors.blue, fontSize: 12),
+                          style: TextStyle(color: Colors.blue, fontSize: 12,fontWeight: FontWeight.w300,),
                         ),
                       ),
                       Icon(

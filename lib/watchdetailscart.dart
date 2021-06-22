@@ -85,7 +85,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
             style: TextStyle(
                 color: Colors.grey,
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w300),
           ),
         ),
         body: SafeArea(
@@ -112,7 +112,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                   Container(
                     child: Text(
                       "Shopping Details",
-                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      style: TextStyle(fontSize: 16, color: Colors.black,fontWeight: FontWeight.w300),
                     ),
                   ),
                   SizedBox(
@@ -126,7 +126,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                       Container(
                         child: Text(
                           "Total Price",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                         ),
                       ),
                       Container(
@@ -137,7 +137,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                             child: Text(
                               "$total",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 15),
+                                  TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                             ),
                           )
                         ],
@@ -153,7 +153,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                       Container(
                         child: Text(
                           "Coupon Discount",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                         ),
                       ),
                       Container(
@@ -170,7 +170,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                             child: Text(
                               voucherController.text == "" ? "0.0/-" : "50.0/-",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 15),
+                                  TextStyle(color: Colors.blue, fontSize: 15,fontWeight: FontWeight.w300),
                             ),
                           )
                         ],
@@ -186,7 +186,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                       Container(
                         child: Text(
                           "Delivery Charge",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                         ),
                       ),
                       Container(
@@ -196,7 +196,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                             child: Text(
                               "100.0/-",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 15),
+                                  TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                             ),
                           )
                         ],
@@ -216,7 +216,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                       Container(
                         child: Text(
                           "Total Payable",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                         ),
                       ),
                       Container(
@@ -226,7 +226,7 @@ class _WatchdetailscartState extends State<Watchdetailscart> {
                             child: Text(
                               "$totalAmt/-",
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 15),
+                                  TextStyle(color: Colors.black, fontSize: 15,fontWeight: FontWeight.w300),
                             ),
                           )
                         ],

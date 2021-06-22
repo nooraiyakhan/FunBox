@@ -70,9 +70,9 @@ class _DetailsPageState extends State<DetailsPage> {
           title: Text(
             "Details",
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[700],
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w300),
           ),
         ),
         body: SingleChildScrollView(
@@ -116,12 +116,12 @@ class _DetailsPageState extends State<DetailsPage> {
                           Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2),
-                                  color: Colors.grey),
+                                  color: Colors.grey[700]),
                               margin: EdgeInsets.only(right: 30),
                               padding: EdgeInsets.all(5),
                               child: Text(
                                 "${pageIndex + 1}/${sliderPic.length}",
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: Colors.white,),
                               )),
                         ],
                       ),
@@ -138,15 +138,13 @@ class _DetailsPageState extends State<DetailsPage> {
                   activeColor: Colors.blue,
                   height: 7,
                   width: 7,
+
                 ),
                 Column(children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 30, right: 30, top: 10),
+                  Card(
+                    margin: EdgeInsets.only(left: 20, right: 20, top: 10),
                     // margin: EdgeInsets.only(right: 210),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
+                   elevation: 2,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -170,7 +168,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                 child: Text(
                                   "${widget.mobileDetails['price']}",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 16),
+                                      color: Colors.white, fontSize: 16, fontWeight: FontWeight.w300),
                                 ),
                               ),
                             ],
@@ -190,6 +188,10 @@ class _DetailsPageState extends State<DetailsPage> {
                                 'size': widget.mobileDetails["size"],
                                 'camera': widget.mobileDetails["camera"],
                                 'ram': widget.mobileDetails["ram"],
+                                 'front_camera': widget.mobileDetails["front_camera"],
+                                'rear_camera': widget.mobileDetails["rear_camera"],
+                                'processor': widget.mobileDetails["processor"],
+                                'rom': widget.mobileDetails["rom"],
                                 'battery': widget.mobileDetails["battery"],
                                 'rating': widget.mobileDetails["rating"],
                                 'status': widget.mobileDetails["status"],
@@ -208,13 +210,13 @@ class _DetailsPageState extends State<DetailsPage> {
                             padding: EdgeInsets.only(
                                 top: 10, bottom: 10, right: 15, left: 15),
                             child: Text(
-                              "Add To Cart",
+                              "Add to Cart",
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 12),
+                                  TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w300),
                             ),
                           ),
                         ),
-                        InkWell(
+                        GestureDetector(
                           onTap: () {
                             setState(() {
                               if (isFav) {
@@ -224,16 +226,20 @@ class _DetailsPageState extends State<DetailsPage> {
                               }
 
                               userFavouriteList.add({
-                                'id': favLastId++,
-                                'pic': widget.mobileDetails["pic"],
+                                 'pic': widget.mobileDetails["pic"],
                                 'name': widget.mobileDetails["name"],
                                 'price': widget.mobileDetails["price"],
                                 'size': widget.mobileDetails["size"],
                                 'camera': widget.mobileDetails["camera"],
                                 'ram': widget.mobileDetails["ram"],
+                                 'front_camera': widget.mobileDetails["front_camera"],
+                                'rear_camera': widget.mobileDetails["rear_camera"],
+                                'processor': widget.mobileDetails["processor"],
+                                'rom': widget.mobileDetails["rom"],
                                 'battery': widget.mobileDetails["battery"],
                                 'rating': widget.mobileDetails["rating"],
                                 'status': widget.mobileDetails["status"],
+                                'count': 1
                               });
                             });
                           },
@@ -254,14 +260,17 @@ class _DetailsPageState extends State<DetailsPage> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.only(left: 30, right: 0),
+                  margin: EdgeInsets.only(left: 20, right: 20),
+                  
                   decoration: BoxDecoration(
+                    border: Border.all(width: 0.1,color: Colors.grey[700]),
                     color: Colors.white,
+                    
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
                     padding:
-                        EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 5),
+                        EdgeInsets.only(left: 20, right: 10, bottom: 15, top: 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -270,88 +279,112 @@ class _DetailsPageState extends State<DetailsPage> {
                               right: 0, left: 0, top: 10, bottom: 8),
                           child: Text(
                             "Product Information",
-                            style: TextStyle(color: Colors.black, fontSize: 15),
+                            style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.w300),
                           ),
                         ),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Model:${widget.mobileDetails['name']}",
+                              "Model:${widget.mobileDetails['name']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Available Color:${widget.mobileDetails['color']}",
+                              "Available Color:${widget.mobileDetails['color']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Display:${widget.mobileDetails['size']}",
+                              "Display:${widget.mobileDetails['size']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Camera:${widget.mobileDetails['camera']}",
+                              "Front camera:${widget.mobileDetails['front_camera']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
+                            )),
+                              Container(
+                            padding: EdgeInsets.only(
+                                right: 0, left: 0, top: 0, bottom: 8),
+                            child: Text(
+                              "Rear camera:${widget.mobileDetails['rear_camera']}",maxLines: 4,
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
+                            )),
+                                   Container(
+                            padding: EdgeInsets.only(
+                                right: 0, left: 0, top: 0, bottom: 8),
+                            child: Text(
+                              "Processor:${widget.mobileDetails['processor']}",maxLines: 4,
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300,),
+                            )),
+                              Container(
+                            padding: EdgeInsets.only(
+                                right: 0, left: 0, top: 0, bottom: 8),
+                            child: Text(
+                              "Rom :${widget.mobileDetails['rom']}",maxLines: 4,
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Ram:${widget.mobileDetails['ram']}",
+                              "Ram:${widget.mobileDetails['ram']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Battery:${widget.mobileDetails['battery']}",
+                              "Battery:${widget.mobileDetails['battery']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Status:${widget.mobileDetails['status']}",
+                              "Status:${widget.mobileDetails['status']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Condition:${widget.mobileDetails['condition']}",
+                              "Condition:${widget.mobileDetails['condition']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Posted:${widget.mobileDetails['posted']}",
+                              "Posted:${widget.mobileDetails['posted']}",maxLines:4 ,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                         Container(
                             padding: EdgeInsets.only(
                                 right: 0, left: 0, top: 0, bottom: 8),
                             child: Text(
-                              "Warranty:${widget.mobileDetails['warranty']}",
+                              "Warranty:${widget.mobileDetails['warranty']}",maxLines: 4,
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 12),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )),
                       ],
                     ),
@@ -364,12 +397,10 @@ class _DetailsPageState extends State<DetailsPage> {
                   onTap: () {
                     Share.share("Share text");
                   },
-                  child: Container(
+                  child: Card(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                     margin: EdgeInsets.only(left: 120, right: 120),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
+                    elevation: 1,
                     child: Row(
                       children: [
                         Padding(
@@ -398,11 +429,9 @@ class _DetailsPageState extends State<DetailsPage> {
                 SizedBox(
                   height: 10,
                 ),
-                Container(
-                  margin: EdgeInsets.only(left: 30, right: 30),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5)),
+                Card(
+                  margin: EdgeInsets.only(left: 20, right: 20,bottom: 10),
+               
                   child: Column(
                     children: [
                       Container(
@@ -410,16 +439,16 @@ class _DetailsPageState extends State<DetailsPage> {
                           children: [
                             Padding(
                               padding:
-                                  EdgeInsets.only(left: 10, right: 10, top: 50),
+                                  EdgeInsets.only(left: 15, right: 10, top: 50),
                             ),
                             Container(
-                              padding: EdgeInsets.only(right: 100),
+                              padding: EdgeInsets.only(right: 94),
                               child: Text(
                                 "Related Products",
                                 style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300),
                               ),
                             ),
                             Container(
@@ -427,7 +456,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               child: Text(
                                 "${widget.relatedList.length - 1} Products",
                                 style:
-                                    TextStyle(color: Colors.blue, fontSize: 10),
+                                    TextStyle(color: Colors.blue, fontSize: 11),
                               ),
                             )
                           ],
@@ -438,7 +467,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         scrollDirection: Axis.horizontal,
                         child: Container(
                           margin:
-                              EdgeInsets.only(left: 20, bottom: 10, right: 10),
+                              EdgeInsets.only(left: 10, bottom: 10, right: 10),
                           child: Row(
                               children: List.generate(widget.relatedList.length,
                                   (index) {
@@ -459,7 +488,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                       height: 180,
                                       padding:
                                           EdgeInsets.only(left: 10, right: 10),
-                                      margin: EdgeInsets.all(5),
+                                        margin: EdgeInsets.only(left: 8,right: 8,bottom: 10),
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(8),
@@ -483,6 +512,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                               overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
                                                   color: Colors.black45,
+                                                  fontWeight: FontWeight.w300,
                                                   fontSize: 12),
                                             ),
                                           ),
@@ -491,7 +521,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                                 EdgeInsets.only(bottom: 10),
                                             child: Text(
                                               "${widget.relatedList[index]['price']}",
-                                              style: TextStyle(fontSize: 12),
+                                              style: TextStyle(fontSize: 12,fontWeight: FontWeight.w300,color: Colors.black),
                                             ),
                                           ),
                                         ],

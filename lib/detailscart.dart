@@ -82,9 +82,9 @@ class _DetailscartPageState extends State<DetailscartPage> {
           title: Text(
             "Checkout",
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[700],
                 fontSize: 16,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w300),
           ),
         ),
         body: SafeArea(
@@ -100,7 +100,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                  border: Border.all(color: Colors.grey[700].withOpacity(0.1)),
                   borderRadius: BorderRadius.circular(5)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,7 +111,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                   Container(
                     child: Text(
                       "Shopping Details",
-                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      style: TextStyle(fontSize: 16, color: Colors.black,fontWeight: FontWeight.w300,),
                     ),
                   ),
                   SizedBox(
@@ -125,7 +125,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                       Container(
                         child: Text(
                           "Total Price",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                         ),
                       ),
                       Container(
@@ -134,9 +134,9 @@ class _DetailscartPageState extends State<DetailscartPage> {
                           Container(),
                           Container(
                             child: Text(
-                              "$total",
+                              "$total/-",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 15),
+                                  TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                             ),
                           )
                         ],
@@ -152,7 +152,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                       Container(
                         child: Text(
                           "Coupon Discount",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                         ),
                       ),
                       Container(
@@ -162,14 +162,14 @@ class _DetailscartPageState extends State<DetailscartPage> {
                             child: Text(
                               "-",
                               style:
-                                  TextStyle(fontSize: 15, color: Colors.blue),
+                                  TextStyle(fontSize: 15, color: Colors.blue,fontWeight: FontWeight.w300,),
                             ),
                           ),
                           Container(
                             child: Text(
                               voucherController.text == "" ? "0.0/-" : "50.0/-",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 15),
+                                  TextStyle(color: Colors.blue, fontSize: 15,fontWeight: FontWeight.w300,),
                             ),
                           )
                         ],
@@ -185,7 +185,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                       Container(
                         child: Text(
                           "Delivery Charge",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                         ),
                       ),
                       Container(
@@ -195,7 +195,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                             child: Text(
                               "100.0/-",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 15),
+                                  TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                             ),
                           )
                         ],
@@ -215,7 +215,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                       Container(
                         child: Text(
                           "Total Payable",
-                          style: TextStyle(color: Colors.grey, fontSize: 15),
+                          style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                         ),
                       ),
                       Container(
@@ -225,7 +225,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                             child: Text(
                               "$totalAmt/-",
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 15),
+                                  TextStyle(color: Colors.black, fontSize: 15,fontWeight: FontWeight.w300,),
                             ),
                           )
                         ],
@@ -249,7 +249,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                               controller: voucherController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: "Type voucher number.."),
+                                  hintText: "Type voucher number..",hintStyle: TextStyle(fontWeight: FontWeight.w300,)),
                             ),
                           ),
                         ),
@@ -269,7 +269,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                                 borderRadius: BorderRadius.circular(5)),
                             child: Text(
                               "Apply",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300,),
                             ),
                           ),
                         )
@@ -286,7 +286,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                  border: Border.all(color: Colors.grey[700].withOpacity(0.1)),
                   borderRadius: BorderRadius.circular(5)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -297,7 +297,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                       Container(
                         child: Text(
                           "Deliver To ",
-                          style: TextStyle(color: Colors.black, fontSize: 16),
+                          style: TextStyle(color: Colors.black, fontSize: 16,fontWeight: FontWeight.w300,),
                         ),
                       ),
                     ],
@@ -309,7 +309,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                     padding: EdgeInsets.only(bottom: 5),
                     child: Text(
                       "John Smith",
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                      style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                     ),
                   ),
                   SizedBox(
@@ -331,8 +331,8 @@ class _DetailscartPageState extends State<DetailscartPage> {
                             Container(
                                 margin: EdgeInsets.only(left: 15),
                                 child: Text(
-                                  "address",
-                                  style: TextStyle(color: Colors.grey),
+                                  "Address",
+                                  style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,),
                                 )),
                           ],
                         ),
@@ -351,7 +351,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                             child: Text(
                               "Choose",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 15),
+                                  TextStyle(color: Colors.blue, fontSize: 15,fontWeight: FontWeight.w300,),
                             ),
                           ),
                         ))
@@ -365,7 +365,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                     padding: EdgeInsets.only(bottom: 5),
                     child: Text(
                       "Delivery Date",
-                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                      style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                     ),
                   ),
                   SizedBox(
@@ -387,10 +387,11 @@ class _DetailscartPageState extends State<DetailscartPage> {
                             Container(
                                 margin: EdgeInsets.only(left: 15),
                                 child: Text(
+                                
                                   _dateTime == null
-                                    ? 'Choose delivery date'
+                                    ? 'Choose Delivery Date' 
                                     : _dateTime.toString(),
-                                  style: TextStyle(color: Colors.grey),
+                                  style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300),
                                 )),
                           ],
                         ),
@@ -417,7 +418,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                             child: Text(
                               "Choose",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 15),
+                                  TextStyle(color: Colors.blue, fontSize: 15,fontWeight: FontWeight.w300,),
                             ),
                           ),
                         ))
@@ -438,7 +439,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Colors.grey.withOpacity(0.1)),
+                  border: Border.all(color: Colors.grey[700].withOpacity(0.1)),
                   borderRadius: BorderRadius.circular(5)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -446,7 +447,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                   Container(
                     child: Text(
                       "Payment Details",
-                      style: TextStyle(color: Colors.black, fontSize: 16),
+                      style: TextStyle(color: Colors.black, fontSize: 16,fontWeight: FontWeight.w300,),
                     ),
                   ),
                   SizedBox(
@@ -455,8 +456,8 @@ class _DetailscartPageState extends State<DetailscartPage> {
                   Container(
                     padding: EdgeInsets.only(bottom: 5),
                     child: Text(
-                      "Cash on delivery",
-                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                      "Cash on Delivery",
+                      style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                     ),
                   ),
                   SizedBox(
@@ -481,7 +482,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                               // padding: EdgeInsetsDirectional.only(end: 165),
                               child: Text(
                             "New York,USA",
-                            style: TextStyle(color: Colors.grey, fontSize: 14),
+                            style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                           )),
                           SizedBox(
                             width: 165,
@@ -514,7 +515,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                     padding: EdgeInsets.only(bottom: 5),
                     child: Text(
                       "Card Payment",
-                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                      style: TextStyle(color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300,),
                     ),
                   ),
                   SizedBox(
@@ -541,7 +542,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                               child: Text(
                                 "1283 6748 9374 6528",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 14),
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300,),
                               )),
                           InkWell(
                             onTap: () {
@@ -579,14 +580,14 @@ class _DetailscartPageState extends State<DetailscartPage> {
                             title: Text(
                               "To confirm your order you have to pay 25% (500/-) through bikash (01XXXXXXXXX)",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 15),
+                                  TextStyle(color: Colors.grey[700], fontSize: 15,fontWeight: FontWeight.w300,),
                             ),
                             actions: [
                               CupertinoDialogAction(
                                 isDefaultAction: true,
                                 child: Text(
                                   "OK",
-                                  style: TextStyle(color: Colors.blue),
+                                  style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300,),
                                 ),
                                 onPressed: () {
                                   print("OK");
@@ -608,7 +609,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
                   ),
                   child: Text(
                     "Submit Order",
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.w300,),
                   ),
                   padding: EdgeInsets.only(
                       left: 120, right: 120, top: 10, bottom: 10),
@@ -619,7 +620,7 @@ class _DetailscartPageState extends State<DetailscartPage> {
         ),
         bottomNavigationBar: Container(
           alignment: Alignment.center,
-          height: 40,
+          height: 50,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             color: Colors.blue

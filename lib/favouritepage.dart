@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:second_project/contact.dart';
 import 'package:second_project/main.dart';
 import 'package:second_project/profile.dart';
 import 'package:second_project/purchagepage.dart';
@@ -58,7 +59,7 @@ fetchFavourite() async {
         iconTheme: IconThemeData(color: Colors.blue),
         title: Text(
           "Favourite",
-          style: TextStyle(color: Colors.grey, fontSize: 17),
+          style: TextStyle(color: Colors.grey[700], fontSize: 16,fontWeight: FontWeight.w300),
         ),
       ),
       drawer: Drawer(
@@ -93,14 +94,14 @@ fetchFavourite() async {
                                   child: Text(
                                     "Hello,",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
+                                        color: Colors.grey[700], fontSize: 15,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                                 Container(
                                   child: Text(
                                     "Nooraiya khan",
                                     style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
+                                        fontSize: 18, color: Colors.black,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                               ],
@@ -123,7 +124,7 @@ fetchFavourite() async {
                           children: <Widget>[
                             Icon(
                               Icons.home,
-                              color: Colors.grey,
+                              color: Colors.grey[700],
                               size: 18,
                             ),
                             SizedBox(
@@ -132,7 +133,7 @@ fetchFavourite() async {
                             Text(
                               "Home",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -163,7 +164,7 @@ fetchFavourite() async {
                             Text(
                               "Profile",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -198,7 +199,7 @@ fetchFavourite() async {
                                   Text(
                                     "Cart",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 14),
+                                        color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -206,7 +207,7 @@ fetchFavourite() async {
                             Text(
                               "4",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 14),
+                                  TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -239,7 +240,7 @@ fetchFavourite() async {
                                 Text(
                                   "Orders",
                                   style: TextStyle(
-                                      color: Colors.grey, fontSize: 14),
+                                      color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                 )
                               ],
                             ),
@@ -247,7 +248,7 @@ fetchFavourite() async {
                               padding: EdgeInsets.only(right: 15),
                               child: Text(
                                 "4",
-                                style: TextStyle(color: Colors.blue),
+                                style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300),
                               ),
                             )
                           ],
@@ -278,7 +279,7 @@ fetchFavourite() async {
                             Text(
                               "Address",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -312,7 +313,7 @@ fetchFavourite() async {
                                 Text(
                                   "Vouchers",
                                   style: TextStyle(
-                                      color: Colors.grey, fontSize: 14),
+                                      color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                 )
                               ],
                             ),
@@ -320,7 +321,7 @@ fetchFavourite() async {
                               padding: EdgeInsets.only(right: 15),
                               child: Text(
                                 "4",
-                                style: TextStyle(color: Colors.blue),
+                                style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300),
                               ),
                             )
                           ],
@@ -359,7 +360,7 @@ fetchFavourite() async {
                                   Text(
                                     "Favourite",
                                     style: TextStyle(
-                                        color: Colors.blue, fontSize: 14),
+                                        color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -367,19 +368,19 @@ fetchFavourite() async {
                             Text(
                               "2",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 14),
+                                  TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Divider(
                     height: 2,
                   ),
                   SizedBox(
-                    height: 15,
+                    height: 20,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -401,11 +402,38 @@ fetchFavourite() async {
                             Text(
                               "Terms and Conditions",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
                   ),
+                   SizedBox(
+                      height: 30,
+                    ),
+                    InkWell(
+                      onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact()));
+                      },
+                      child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.phone,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Contact Us",
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          )),
+                    ),
                   SizedBox(
                     height: 30,
                   ),
@@ -421,7 +449,7 @@ fetchFavourite() async {
                                     child: Text(
                                       "Do you want to Log Out?",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 15),
+                                          color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                                     ),
                                   ),
                                   SizedBox(
@@ -454,7 +482,7 @@ fetchFavourite() async {
                                               "Yes",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 15),
+                                                  fontSize: 15,fontWeight: FontWeight.w300),
                                             ),
                                           ),
                                         ),
@@ -478,7 +506,7 @@ fetchFavourite() async {
                                             child: Text(
                                               "No",
                                               style: TextStyle(
-                                                  color: Colors.white,
+                                                  color: Colors.white,fontWeight: FontWeight.w300,
                                                   fontSize: 15),
                                             ),
                                           ),
@@ -504,7 +532,7 @@ fetchFavourite() async {
                             Text(
                               "Logout",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
@@ -517,7 +545,7 @@ fetchFavourite() async {
       ),
       body: SafeArea(
           child: userFavouriteList.length == 0
-              ? Center(child: Text("No items available!"))
+              ? Center(child: Text("No items available!",style: TextStyle(fontWeight: FontWeight.w300),))
               : SingleChildScrollView(
                   physics: BouncingScrollPhysics(),
                   child: Container(
@@ -579,6 +607,7 @@ fetchFavourite() async {
                                                 "${userFavouriteList[index]['status']}",
                                                 style: TextStyle(
                                                     color: Colors.white,
+                                                    fontWeight: FontWeight.w300,
                                                     fontSize: 10)))
                                       ],
                                     ),
@@ -589,7 +618,7 @@ fetchFavourite() async {
                                         child: Text(
                                           "Price - ${userFavouriteList[index]['price']}/-",
                                           style: TextStyle(
-                                              color: Colors.grey, fontSize: 12),
+                                              color: Colors.grey, fontSize: 12,fontWeight: FontWeight.w300),
                                         )),
                                     Container(
                                         padding:

@@ -34,13 +34,13 @@ class _LoginpageState extends State<Loginpage> {
               margin: EdgeInsets.only(left: 20, right: 0, top: 100, bottom: 0),
               child: Text(
                 "Welcome!",
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 25,fontWeight: FontWeight.w300),
               ),
             ),
             Container(
               child: Text(
                 "Hey there! Get the best from our app ",
-                style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                style: TextStyle(fontSize: 11, color: Colors.grey[500],fontWeight: FontWeight.w300),
               ),
               padding: EdgeInsets.fromLTRB(20, 5, 0, 0),
             ),
@@ -84,7 +84,7 @@ class _LoginpageState extends State<Loginpage> {
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: "Phone number",
-                            hintStyle: TextStyle(color: Colors.grey)),
+                            hintStyle: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300)),
                       ),
                     )
                   ],
@@ -103,7 +103,7 @@ class _LoginpageState extends State<Loginpage> {
                           SizedBox(width: 5),
                           Text(
                             "Phone number field is blank",
-                            style: TextStyle(color: Colors.redAccent),
+                            style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),
                           ),
                         ],
                       ),
@@ -115,7 +115,7 @@ class _LoginpageState extends State<Loginpage> {
                 child: Text(
                   "${phone.length}/11",
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300),
                 ),
               ),
               isPhoneInvalid
@@ -131,7 +131,7 @@ class _LoginpageState extends State<Loginpage> {
                           SizedBox(width: 5),
                           Text(
                             "Phone number is invalid",
-                            style: TextStyle(color: Colors.redAccent),
+                            style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),
                           ),
                         ],
                       ),
@@ -173,7 +173,7 @@ class _LoginpageState extends State<Loginpage> {
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Password",
-                                  hintStyle: TextStyle(color: Colors.grey),
+                                  hintStyle: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300),
                                 ),
                               ),
                             ),
@@ -211,7 +211,7 @@ class _LoginpageState extends State<Loginpage> {
                             SizedBox(width: 5),
                             Text(
                               passwordMsg,
-                              style: TextStyle(color: Colors.redAccent),
+                              style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.w300),
                             ),
                           ],
                         ),
@@ -229,7 +229,7 @@ class _LoginpageState extends State<Loginpage> {
                         style: TextStyle(
                             fontSize: 14,
                             color: Colors.black,
-                            fontWeight: FontWeight.normal)),
+                            fontWeight: FontWeight.w300)),
                   ),
                 ),
                 Container(
@@ -287,7 +287,7 @@ class _LoginpageState extends State<Loginpage> {
                     },
                     child: Text(
                       "Sign in",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300,fontSize: 15),
                     ),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
@@ -302,6 +302,7 @@ class _LoginpageState extends State<Loginpage> {
                           "Don't have an account?",
                           style: TextStyle(
                             fontSize: 14,
+                            fontWeight: FontWeight.w300
                           ),
                         ),
 
@@ -318,9 +319,9 @@ class _LoginpageState extends State<Loginpage> {
                           child: Container(
                             child: Text("Sign up",
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 17,
                                     color: Colors.blue,
-                                    fontWeight: FontWeight.normal)),
+                                    fontWeight: FontWeight.w300)),
                           ),
                         ),
 

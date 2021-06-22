@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:second_project/cart.dart';
+import 'package:second_project/contact.dart';
 import 'package:second_project/editaddresspage.dart';
 import 'package:second_project/loginpage.dart';
 import 'package:second_project/main.dart';
@@ -61,7 +62,7 @@ class _AddresspageState extends State<Addresspage> {
           title: Text(
             "My Address",
             style: TextStyle(
-                color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w400),
+                color: Colors.grey[700], fontSize: 16, fontWeight: FontWeight.w300),
           ),
           actions: [
             IconButton(
@@ -109,14 +110,14 @@ class _AddresspageState extends State<Addresspage> {
                                   child: Text(
                                     "Hello,",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
+                                        color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                                 Container(
                                   child: Text(
                                     "Nooraiya khan",
                                     style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
+                                        fontSize: 18, color: Colors.black,fontWeight: FontWeight.w300),
                                   ),
                                 ),
                               ],
@@ -150,7 +151,7 @@ class _AddresspageState extends State<Addresspage> {
                               child: Text(
                                 "Home",
                                 style:
-                                    TextStyle(color: Colors.grey, fontSize: 13),
+                                    TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                               ),
                             ),
                           ],
@@ -167,8 +168,7 @@ class _AddresspageState extends State<Addresspage> {
                               builder: (context) => ProfilePage()));
                     },
                     child: Container(
-                        padding: EdgeInsets.all(15),
-                        margin: EdgeInsets.only(right: 15),
+                           padding: EdgeInsets.only(left: 15, right: 15),
                         child: Row(
                           children: <Widget>[
                             Icon(
@@ -182,7 +182,7 @@ class _AddresspageState extends State<Addresspage> {
                             Text(
                               "Profile",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 13),
+                                  TextStyle(color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -217,7 +217,7 @@ class _AddresspageState extends State<Addresspage> {
                                   Text(
                                     "Cart",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 13),
+                                        color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -225,7 +225,7 @@ class _AddresspageState extends State<Addresspage> {
                           ),
                           Text(
                             "4",
-                            style: TextStyle(color: Colors.blue, fontSize: 13),
+                            style: TextStyle(color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300),
                           )
                         ],
                       )),
@@ -259,7 +259,7 @@ class _AddresspageState extends State<Addresspage> {
                                   Text(
                                     "Orders",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 13),
+                                        color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -267,7 +267,7 @@ class _AddresspageState extends State<Addresspage> {
                           ),
                           Text(
                             "4",
-                            style: TextStyle(color: Colors.blue, fontSize: 13),
+                            style: TextStyle(color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300),
                           )
                         ],
                       )),
@@ -298,7 +298,7 @@ class _AddresspageState extends State<Addresspage> {
                             Text(
                               "Address",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 13),
+                                  TextStyle(color: Colors.blue, fontSize: 13,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
@@ -332,7 +332,7 @@ class _AddresspageState extends State<Addresspage> {
                                 Text(
                                   "Vouchers",
                                   style: TextStyle(
-                                      color: Colors.grey, fontSize: 13),
+                                      color: Colors.grey, fontSize: 13,fontWeight: FontWeight.w300),
                                 )
                               ],
                             ),
@@ -340,7 +340,7 @@ class _AddresspageState extends State<Addresspage> {
                               padding: EdgeInsets.only(right: 15),
                               child: Text(
                                 "4",
-                                style: TextStyle(color: Colors.blue),
+                                style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w300),
                               ),
                             )
                           ],
@@ -376,7 +376,7 @@ class _AddresspageState extends State<Addresspage> {
                                   Text(
                                     "Favourite",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 14),
+                                        color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                                   )
                                 ],
                               ),
@@ -384,19 +384,19 @@ class _AddresspageState extends State<Addresspage> {
                             Text(
                               "2",
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 14),
+                                  TextStyle(color: Colors.blue, fontSize: 14,fontWeight: FontWeight.w300),
                             )
                           ],
                         )),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Divider(
                     height: 2,
                   ),
                   SizedBox(
-                    height: 15,
+                    height: 20,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -418,11 +418,38 @@ class _AddresspageState extends State<Addresspage> {
                             Text(
                               "Terms and Conditions",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 13),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
                   ),
+                   SizedBox(
+                      height: 30,
+                    ),
+                    InkWell(
+                      onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact()));
+                      },
+                      child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.phone,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Contact Us",
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          )),
+                    ),
                   SizedBox(
                     height: 30,
                   ),
@@ -438,7 +465,7 @@ class _AddresspageState extends State<Addresspage> {
                                     child: Text(
                                       "Do you want to Log Out?",
                                       style: TextStyle(
-                                          color: Colors.grey, fontSize: 15),
+                                          color: Colors.grey, fontSize: 15,fontWeight: FontWeight.w300),
                                     ),
                                   ),
                                   SizedBox(
@@ -471,7 +498,7 @@ class _AddresspageState extends State<Addresspage> {
                                               "Yes",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 15),
+                                                  fontSize: 15,fontWeight: FontWeight.w300),
                                             ),
                                           ),
                                         ),
@@ -496,7 +523,7 @@ class _AddresspageState extends State<Addresspage> {
                                               "No",
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 15),
+                                                  fontSize: 15,fontWeight: FontWeight.w300),
                                             ),
                                           ),
                                         ),
@@ -521,7 +548,7 @@ class _AddresspageState extends State<Addresspage> {
                             Text(
                               "Logout",
                               style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
+                                  TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w300),
                             ),
                           ],
                         )),
@@ -533,7 +560,7 @@ class _AddresspageState extends State<Addresspage> {
         ),
         body: SafeArea(
             child: userAddressList.length == 0
-                ? Center(child: Text("No address found"))
+                ? Center(child: Text("No address found",style: TextStyle(fontWeight: FontWeight.w300),))
                 : SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
                     child: Container(
@@ -574,20 +601,23 @@ class _AddresspageState extends State<Addresspage> {
                                       child: Text(
                                     "House/plot:${userAddressList[index]['house']}",
                                     maxLines: 4,
-                                    // "Home",style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.w400),),
-                                  )),
+                                  style: TextStyle(fontSize: 16,color: Colors.grey[700],fontWeight: FontWeight.w400),),
+                                  ),
                                   Container(
                                     child: Text(
                                       "Street/road:${userAddressList[index]['street']}",
-                                      maxLines: 4,
+                                        maxLines: 4,
+                                       style: TextStyle(fontSize: 16,color: Colors.grey[700],fontWeight: FontWeight.w400),),
+                                    
                                     ),
-                                  ),
+                                
                                   Container(
                                     child: Text(
                                       "Area:${userAddressList[index]['area']}",
                                       maxLines: 4,
+                                      style: TextStyle(fontSize: 16,color: Colors.grey[700],fontWeight: FontWeight.w400),),
                                     ),
-                                  ),
+                                 
                                   Row(
                                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -595,6 +625,7 @@ class _AddresspageState extends State<Addresspage> {
                                         child: Text(
                                           "Block/sector:${userAddressList[index]['block']}",
                                           maxLines: 4,
+                                          style: TextStyle(fontSize: 16,color: Colors.grey[700],fontWeight: FontWeight.w400),
                                         ),
                                       ),
                                     ],
@@ -603,6 +634,7 @@ class _AddresspageState extends State<Addresspage> {
                                     child: Text(
                                       "Floor/flat:${userAddressList[index]['floor']}",
                                       maxLines: 2,
+                                      style: TextStyle(fontSize: 16,color: Colors.grey[700],fontWeight: FontWeight.w400),
                                     ),
                                   ),
                                   // SizedBox(
